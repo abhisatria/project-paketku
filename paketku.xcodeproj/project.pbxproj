@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9F52CC525891FA4001C5099 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F52CC425891FA4001C5099 /* DataModel.swift */; };
+		E9F52CC825892A38001C5099 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F52CC725892A38001C5099 /* APIRequest.swift */; };
 		FF62E8312588F4F900C2EFF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62E8302588F4F900C2EFF1 /* AppDelegate.swift */; };
 		FF62E8332588F4F900C2EFF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62E8322588F4F900C2EFF1 /* SceneDelegate.swift */; };
 		FF62E8352588F4F900C2EFF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62E8342588F4F900C2EFF1 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9F52CC425891FA4001C5099 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		E9F52CC725892A38001C5099 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		FF62E82D2588F4F900C2EFF1 /* paketku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = paketku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62E8302588F4F900C2EFF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF62E8322588F4F900C2EFF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				FF62E83E2588F4FB00C2EFF1 /* LaunchScreen.storyboard */,
 				FF62E8412588F4FB00C2EFF1 /* Info.plist */,
 				FF62E8392588F4F900C2EFF1 /* paketku.xcdatamodeld */,
+				E9F52CC425891FA4001C5099 /* DataModel.swift */,
+				E9F52CC725892A38001C5099 /* APIRequest.swift */,
 			);
 			path = paketku;
 			sourceTree = "<group>";
@@ -141,9 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F52CC525891FA4001C5099 /* DataModel.swift in Sources */,
 				FF62E8352588F4F900C2EFF1 /* ViewController.swift in Sources */,
 				FF62E83B2588F4F900C2EFF1 /* paketku.xcdatamodeld in Sources */,
 				FF62E8312588F4F900C2EFF1 /* AppDelegate.swift in Sources */,
+				E9F52CC825892A38001C5099 /* APIRequest.swift in Sources */,
 				FF62E8332588F4F900C2EFF1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
