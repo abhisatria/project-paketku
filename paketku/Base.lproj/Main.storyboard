@@ -257,7 +257,7 @@
                                 <color key="backgroundColor" red="0.11803889949647049" green="0.23210562548241806" blue="0.61158112046632129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="tintColor" systemColor="linkColor"/>
-                                <state key="normal" title="Dropdown">
+                                <state key="normal" title="Select Courier">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
