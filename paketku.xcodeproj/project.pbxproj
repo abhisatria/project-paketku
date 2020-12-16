@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		965F498A258A2E730090D3D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F4989258A2E730090D3D1 /* HomeViewController.swift */; };
 		FF62E8312588F4F900C2EFF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62E8302588F4F900C2EFF1 /* AppDelegate.swift */; };
 		FF62E8332588F4F900C2EFF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62E8322588F4F900C2EFF1 /* SceneDelegate.swift */; };
 		FF62E8352588F4F900C2EFF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62E8342588F4F900C2EFF1 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		965F4989258A2E730090D3D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FF62E82D2588F4F900C2EFF1 /* paketku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = paketku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62E8302588F4F900C2EFF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF62E8322588F4F900C2EFF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				FF62E83E2588F4FB00C2EFF1 /* LaunchScreen.storyboard */,
 				FF62E8412588F4FB00C2EFF1 /* Info.plist */,
 				FF62E8392588F4F900C2EFF1 /* paketku.xcdatamodeld */,
+				965F4989258A2E730090D3D1 /* HomeViewController.swift */,
 			);
 			path = paketku;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965F498A258A2E730090D3D1 /* HomeViewController.swift in Sources */,
 				FF62E8352588F4F900C2EFF1 /* ViewController.swift in Sources */,
 				FF62E83B2588F4F900C2EFF1 /* paketku.xcdatamodeld in Sources */,
 				FF62E8312588F4F900C2EFF1 /* AppDelegate.swift in Sources */,
