@@ -158,14 +158,11 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CIh-Qg-pR7">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-
-                            
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="725" id="Afb-UH-sWa"/>
                                     <constraint firstAttribute="width" constant="414" id="FWg-qC-Yeu"/>
                                 </constraints>
-
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cells" rowHeight="114" id="AOh-Y9-BU3" customClass="PaketTableViewCell" customModule="paketku" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="114"/>
@@ -241,7 +238,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                      
+                        <viewLayoutGuide key="safeArea" id="9bU-1d-2NR"/>
                         <color key="backgroundColor" red="0.37647058820000001" green="0.48627450979999998" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="CIh-Qg-pR7" firstAttribute="leading" secondItem="9bU-1d-2NR" secondAttribute="leading" id="agd-F3-mUA"/>
@@ -249,9 +246,6 @@
                             <constraint firstItem="CIh-Qg-pR7" firstAttribute="bottom" secondItem="9bU-1d-2NR" secondAttribute="bottom" id="jSj-py-Ryr"/>
                             <constraint firstItem="CIh-Qg-pR7" firstAttribute="top" secondItem="9bU-1d-2NR" secondAttribute="top" id="tlk-wS-MZM"/>
                         </constraints>
-
-                        <viewLayoutGuide key="safeArea" id="9bU-1d-2NR"/>
-                        <color key="backgroundColor" red="0.37647058820000001" green="0.48627450979999998" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="PaketKu" id="syy-K0-hhF"/>
                     <connections>
@@ -437,8 +431,8 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGW-98-7yC">
-                                <rect key="frame" x="166" y="438" width="82" height="34"/>
-                                <color key="backgroundColor" red="0.33333333329999998" green="0.47058823529999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="68" y="438" width="278" height="34"/>
+                                <color key="backgroundColor" red="0.30588235294117649" green="0.66666666666666663" blue="1" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Track">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -451,12 +445,12 @@
                             <constraint firstItem="Q4q-tJ-tUS" firstAttribute="leading" secondItem="b2U-K0-Nno" secondAttribute="leading" constant="91" id="1El-I5-zAm"/>
                             <constraint firstItem="wqN-ri-cbI" firstAttribute="top" secondItem="Q4q-tJ-tUS" secondAttribute="bottom" constant="20" id="9yn-Lo-CYz"/>
                             <constraint firstItem="OF4-WG-L1r" firstAttribute="top" secondItem="b2U-K0-Nno" secondAttribute="top" constant="20" id="Hcb-sm-Ojh"/>
-                            <constraint firstItem="MGW-98-7yC" firstAttribute="leading" secondItem="b2U-K0-Nno" secondAttribute="leading" constant="166" id="HgS-1a-bS1"/>
+                            <constraint firstItem="MGW-98-7yC" firstAttribute="leading" secondItem="b2U-K0-Nno" secondAttribute="leading" constant="68" id="HgS-1a-bS1"/>
                             <constraint firstItem="IRx-Au-63d" firstAttribute="top" secondItem="wqN-ri-cbI" secondAttribute="bottom" constant="20" id="L6a-Fk-Vyy"/>
                             <constraint firstItem="wqN-ri-cbI" firstAttribute="leading" secondItem="b2U-K0-Nno" secondAttribute="leading" constant="68" id="P1A-oS-qrO"/>
                             <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="IRx-Au-63d" secondAttribute="trailing" constant="68" id="cz8-rl-oM0"/>
                             <constraint firstItem="MGW-98-7yC" firstAttribute="top" secondItem="IRx-Au-63d" secondAttribute="bottom" constant="20" id="dut-4Z-bLE"/>
-                            <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="MGW-98-7yC" secondAttribute="trailing" constant="166" id="jGt-Yk-vZ2"/>
+                            <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="MGW-98-7yC" secondAttribute="trailing" constant="68" id="jGt-Yk-vZ2"/>
                             <constraint firstItem="Q4q-tJ-tUS" firstAttribute="top" secondItem="OF4-WG-L1r" secondAttribute="bottom" constant="100" id="jlG-rp-6At"/>
                             <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="OF4-WG-L1r" secondAttribute="trailing" constant="10" id="n4U-LP-Ad2"/>
                             <constraint firstItem="IRx-Au-63d" firstAttribute="leading" secondItem="b2U-K0-Nno" secondAttribute="leading" constant="68" id="pql-fq-Wcn"/>
