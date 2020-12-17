@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17503.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ogf-3F-FWq">
+
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17700" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mcy-YG-LBG">
+
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17502"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="-267" y="-408"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="tGV-Hg-BQP">
             <objects>
-                <viewController id="HFY-0A-RYw" sceneMemberID="viewController">
+                <viewController id="HFY-0A-RYw" customClass="RegisterViewController" customModule="paketku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MlG-eG-A2w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +63,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mcy-YG-LBG" kind="show" id="VAJ-gb-V3b"/>
+                                    <action selector="btnRegister:" destination="HFY-0A-RYw" eventType="touchUpInside" id="YBY-6U-dgo"/>
+                                    <segue destination="mcy-YG-LBG" kind="show" identifier="goToLogin" id="VAJ-gb-V3b"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3En-3i-Jfa">
@@ -79,7 +82,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="okd-O8-eKV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="contains @ and ends with .com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="okd-O8-eKV">
                                 <rect key="frame" x="53" y="457" width="309" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -98,7 +101,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nhk-eq-aJn">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4 - 12 characters" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nhk-eq-aJn">
                                 <rect key="frame" x="53" y="382" width="309" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -111,7 +114,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r14-rY-lCC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4 - 12 characters" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r14-rY-lCC">
                                 <rect key="frame" x="53" y="532" width="309" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -124,7 +127,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNc-3q-wnB">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4 - 12 characters" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNc-3q-wnB">
                                 <rect key="frame" x="53" y="607" width="309" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -169,6 +172,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JGQ-cm-BQs"/>
+                    <connections>
+                        <outlet property="txtConfirm" destination="hNc-3q-wnB" id="c6Q-Bf-0Lh"/>
+                        <outlet property="txtEmail" destination="okd-O8-eKV" id="HRa-MJ-yE1"/>
+                        <outlet property="txtPassword" destination="r14-rY-lCC" id="gHB-DT-AlW"/>
+                        <outlet property="txtUsername" destination="Nhk-eq-aJn" id="1kd-Rc-0Sl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYH-60-Exo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -725,10 +734,10 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
             </objects>
             <point key="canvasLocation" x="3262" y="-564"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="TCp-7h-1fT">
             <objects>
-                <viewController id="mcy-YG-LBG" sceneMemberID="viewController">
+                <viewController id="mcy-YG-LBG" customClass="LoginViewController" customModule="paketku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I7x-7b-cHz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -763,6 +772,9 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.1180388995" green="0.2321056255" blue="0.61158112050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnRegister:" destination="mcy-YG-LBG" eventType="touchUpInside" id="zaG-pw-Fd7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZN-Hl-jUG">
                                 <rect key="frame" x="66" y="670" width="283" height="34"/>
@@ -771,6 +783,9 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnLogin:" destination="mcy-YG-LBG" eventType="touchUpInside" id="cZb-ib-KHy"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOg-fu-GF3">
                                 <rect key="frame" x="163" y="168" width="88" height="41"/>
@@ -826,7 +841,10 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
                     </view>
                     <navigationItem key="navigationItem" id="TpV-pI-A0M"/>
                     <connections>
-                        <segue destination="77N-vC-Tql" kind="show" id="dwM-4p-R7G"/>
+                        <outlet property="txtPassword" destination="yjw-DA-gKG" id="2Fh-9M-8rv"/>
+                        <outlet property="txtUsername" destination="NKq-ll-5Ct" id="u9w-VK-lsD"/>
+                        <segue destination="77N-vC-Tql" kind="show" identifier="loginSuccess" id="dwM-4p-R7G"/>
+                        <segue destination="HFY-0A-RYw" kind="show" identifier="goToRegister" id="vP0-j7-4y3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6DS-Am-Oox" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -836,6 +854,7 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="VAJ-gb-V3b"/>
+        <segue reference="D4H-ML-TKc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cube.box" catalog="system" width="128" height="124"/>
