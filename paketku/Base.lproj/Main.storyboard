@@ -290,24 +290,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OF4-WG-L1r">
-                                <rect key="frame" x="295" y="108" width="109" height="77"/>
+                                <rect key="frame" x="325" y="108" width="79" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="77" id="3xf-HT-3ME"/>
-                                    <constraint firstAttribute="width" constant="109" id="zka-TT-4HT"/>
+                                    <constraint firstAttribute="height" constant="55" id="Qpd-Lq-nQV"/>
+                                    <constraint firstAttribute="width" constant="79" id="X5Y-zd-xZr"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your receipt" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqN-ri-cbI">
-                                <rect key="frame" x="68" y="334" width="278" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Masukkan nomor resimu disini" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqN-ri-cbI">
+                                <rect key="frame" x="50" y="287" width="314" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="278" id="bCd-lV-Ver"/>
+                                    <constraint firstAttribute="width" constant="314" id="3PW-YS-u5t"/>
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Your Shipment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4q-tJ-tUS">
-                                <rect key="frame" x="91" y="285" width="232" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lacak Paketmu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4q-tJ-tUS">
+                                <rect key="frame" x="91" y="248" width="232" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="232" id="DRp-Kg-8eV"/>
                                 </constraints>
@@ -316,17 +316,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="IRx-Au-63d">
-                                <rect key="frame" x="68" y="388" width="278" height="30"/>
+                                <rect key="frame" x="68" y="331" width="278" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9P-Hy-Q6U">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
+                                        <rect key="frame" x="39" y="0.0" width="200" height="30"/>
                                         <color key="backgroundColor" red="0.1180388995" green="0.2321056255" blue="0.61158112050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Ka0-up-D2e"/>
-                                            <constraint firstAttribute="width" constant="278" id="cgu-YX-lCq"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="wp4-XB-OjL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <state key="normal" title="Select Courier">
+                                        <state key="normal" title="Pilih Kurirmu">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -334,11 +334,11 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELu-2E-tfI">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
+                                        <rect key="frame" x="39" y="0.0" width="200" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="6PN-mf-XpN"/>
                                             <constraint firstAttribute="height" constant="30" id="iHY-BR-abA"/>
-                                            <constraint firstAttribute="width" constant="278" id="kNW-11-JMO"/>
                                         </constraints>
                                         <state key="normal" title="JnT">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -348,11 +348,11 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2R2-9l-DKj">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
+                                        <rect key="frame" x="39" y="0.0" width="200" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Apj-j6-WpB"/>
                                             <constraint firstAttribute="height" constant="30" id="EgV-zY-lkU"/>
-                                            <constraint firstAttribute="width" constant="278" id="YmE-TC-PVE"/>
                                         </constraints>
                                         <state key="normal" title="JNE">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -362,10 +362,10 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0m-gY-USd">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
+                                        <rect key="frame" x="39" y="0.0" width="200" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="278" id="5Zb-EW-sIe"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="m6q-Q3-Dyh"/>
                                             <constraint firstAttribute="height" constant="30" id="xS8-hg-yOV"/>
                                         </constraints>
                                         <state key="normal" title="Tiki">
@@ -376,11 +376,11 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukx-B9-70y">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
+                                        <rect key="frame" x="39" y="0.0" width="200" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="YOl-op-uz6"/>
-                                            <constraint firstAttribute="width" constant="278" id="lQs-aw-jzQ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="s15-2D-2Y2"/>
                                         </constraints>
                                         <state key="normal" title="SiCepat">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -390,10 +390,10 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6y-ur-Ngu">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
+                                        <rect key="frame" x="39" y="0.0" width="200" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="278" id="5IG-zF-k65"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="0wR-uc-Bz1"/>
                                             <constraint firstAttribute="height" constant="30" id="Skw-PZ-iYr"/>
                                         </constraints>
                                         <state key="normal" title="Ninja Express">
@@ -404,11 +404,11 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4y1-Zn-mN8">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
+                                        <rect key="frame" x="39" y="0.0" width="200" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="bWh-Z5-WyU"/>
-                                            <constraint firstAttribute="width" constant="278" id="kqc-eY-0ha"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="bbS-rm-QiN"/>
                                         </constraints>
                                         <state key="normal" title="Wahana">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -418,10 +418,10 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yk-Lh-tzD">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="30"/>
+                                        <rect key="frame" x="39" y="0.0" width="200" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="278" id="JHM-5y-YAr"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="hON-ak-QGt"/>
                                             <constraint firstAttribute="height" constant="30" id="rHV-qP-JKB"/>
                                         </constraints>
                                         <state key="normal" title="POS Indonesia">
@@ -431,31 +431,39 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGW-98-7yC">
-                                <rect key="frame" x="68" y="438" width="278" height="34"/>
+                                <rect key="frame" x="105" y="441" width="204" height="34"/>
                                 <color key="backgroundColor" red="0.30588235294117649" green="0.66666666666666663" blue="1" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Track">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-JW-caV">
+                                <rect key="frame" x="222" y="633" width="164" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ID-Cg-cnS">
+                                <rect key="frame" x="36" y="633" width="164" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b2U-K0-Nno"/>
                         <color key="backgroundColor" red="0.37647058823529411" green="0.48627450980392156" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Q4q-tJ-tUS" firstAttribute="leading" secondItem="b2U-K0-Nno" secondAttribute="leading" constant="91" id="1El-I5-zAm"/>
-                            <constraint firstItem="wqN-ri-cbI" firstAttribute="top" secondItem="Q4q-tJ-tUS" secondAttribute="bottom" constant="20" id="9yn-Lo-CYz"/>
-                            <constraint firstItem="OF4-WG-L1r" firstAttribute="top" secondItem="b2U-K0-Nno" secondAttribute="top" constant="20" id="Hcb-sm-Ojh"/>
-                            <constraint firstItem="MGW-98-7yC" firstAttribute="leading" secondItem="b2U-K0-Nno" secondAttribute="leading" constant="68" id="HgS-1a-bS1"/>
-                            <constraint firstItem="IRx-Au-63d" firstAttribute="top" secondItem="wqN-ri-cbI" secondAttribute="bottom" constant="20" id="L6a-Fk-Vyy"/>
-                            <constraint firstItem="wqN-ri-cbI" firstAttribute="leading" secondItem="b2U-K0-Nno" secondAttribute="leading" constant="68" id="P1A-oS-qrO"/>
+                            <constraint firstItem="OF4-WG-L1r" firstAttribute="top" secondItem="b2U-K0-Nno" secondAttribute="top" constant="20" id="Fld-D0-ZHG"/>
+                            <constraint firstItem="IRx-Au-63d" firstAttribute="top" secondItem="wqN-ri-cbI" secondAttribute="bottom" constant="10" id="L6a-Fk-Vyy"/>
+                            <constraint firstItem="MGW-98-7yC" firstAttribute="top" secondItem="IRx-Au-63d" secondAttribute="bottom" constant="80" id="QTK-et-4WV"/>
+                            <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="OF4-WG-L1r" secondAttribute="trailing" constant="10" id="Wym-f8-Ttv"/>
                             <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="IRx-Au-63d" secondAttribute="trailing" constant="68" id="cz8-rl-oM0"/>
-                            <constraint firstItem="MGW-98-7yC" firstAttribute="top" secondItem="IRx-Au-63d" secondAttribute="bottom" constant="20" id="dut-4Z-bLE"/>
-                            <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="MGW-98-7yC" secondAttribute="trailing" constant="68" id="jGt-Yk-vZ2"/>
-                            <constraint firstItem="Q4q-tJ-tUS" firstAttribute="top" secondItem="OF4-WG-L1r" secondAttribute="bottom" constant="100" id="jlG-rp-6At"/>
-                            <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="OF4-WG-L1r" secondAttribute="trailing" constant="10" id="n4U-LP-Ad2"/>
+                            <constraint firstItem="MGW-98-7yC" firstAttribute="leading" secondItem="b2U-K0-Nno" secondAttribute="leading" constant="105" id="kXV-81-Fvp"/>
+                            <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="MGW-98-7yC" secondAttribute="trailing" constant="105" id="lq1-1Y-pHH"/>
                             <constraint firstItem="IRx-Au-63d" firstAttribute="leading" secondItem="b2U-K0-Nno" secondAttribute="leading" constant="68" id="pql-fq-Wcn"/>
-                            <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="wqN-ri-cbI" secondAttribute="trailing" constant="68" id="tNf-du-tUt"/>
+                            <constraint firstItem="Q4q-tJ-tUS" firstAttribute="top" secondItem="b2U-K0-Nno" secondAttribute="top" constant="160" id="tyB-jt-x7B"/>
                             <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="Q4q-tJ-tUS" secondAttribute="trailing" constant="91" id="vuf-tR-gde"/>
+                            <constraint firstItem="wqN-ri-cbI" firstAttribute="leading" secondItem="b2U-K0-Nno" secondAttribute="leading" constant="50" id="xNj-5R-CkW"/>
+                            <constraint firstItem="b2U-K0-Nno" firstAttribute="trailing" secondItem="wqN-ri-cbI" secondAttribute="trailing" constant="50" id="yeL-CG-8mt"/>
+                            <constraint firstItem="wqN-ri-cbI" firstAttribute="top" secondItem="Q4q-tJ-tUS" secondAttribute="bottom" constant="10" id="zoN-9B-VCe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="H0l-TH-Jar"/>
