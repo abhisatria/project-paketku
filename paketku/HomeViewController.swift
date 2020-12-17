@@ -148,6 +148,7 @@ class HomeViewController: UIViewController {
         
         do {
             try context.save()
+            print("Save shipment success")
         } catch {
             print("Save shipment failed")
         }
