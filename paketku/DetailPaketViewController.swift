@@ -19,16 +19,16 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var backgroundBox: UIView!
     @IBOutlet weak var backgroundButtonInfo: UIView!
     @IBOutlet weak var txtButtonInfo: UILabel!
+    
+    @IBOutlet weak var txtResi: UILabel!
+    @IBOutlet weak var txtTujuan: UILabel!
+    @IBOutlet weak var txtStatus: UILabel!
+    @IBOutlet weak var txtDate: UILabel!
     var circleFill = UIImage(systemName: "circle.fill")
     var circle = UIImage(systemName: "circle")
     var arrDummyDetail = [DummyDetail]()
     
-    func initDummy(){
-        arrDummyDetail.append(DummyDetail(title: "Kurir ganti rugi", desc: "15-12-2020", imgInfo: circleFill))
-        arrDummyDetail.append(DummyDetail(title: "[MH JAKARTA] Paket anda hilang", desc: "15-12-2020 16:42", imgInfo: circle))
-        arrDummyDetail.append(DummyDetail(title: "RECEIVED AT WAREHOUSE[JAKARTA]", desc: "15-12-2020 16:42", imgInfo: circle))
-        arrDummyDetail.append(DummyDetail(title: "RECEIVED AT WAREHOUSE[JAKARTA]", desc: "15-12-2020 16:42", imgInfo: circle))
-    }
+    var jsonData: CekResi?
     
     @IBAction func btnSave(_ sender: Any) {
         
@@ -37,12 +37,11 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tvDetail: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        initDummy()
         tvDetail.dataSource = self
         tvDetail.separatorStyle = .none
+        loadData("", "")
+              
         setViewUI()
-        
     }
     
     func setViewUI(){
@@ -57,24 +56,94 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
         //LOGIC taruh disini ya mas
         //if status == onProcess
         self.backgroundButtonInfo.backgroundColor = #colorLiteral(red: 1, green: 0.5411764706, blue: 0, alpha: 1)
-        txtButtonInfo.text = "In Process"
+        txtButtonInfo.text = ""
         // else
         //self.backgroundButtonInfo.backgroundColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
         //txtButtonInfo.text = "Delivered"
     }
     
+    func loadData(_ awb: String, _ courier: String) {
+            
+            var request = URLRequest(url: ApiRequest.init(awb: "170430045644420", courier: "jne").resourceURL)
+            
+            request.httpMethod = "GET"
+            
+            let task =  URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                
+                var result: CekResi?
+    
+                do{
+                    self.jsonData = try JSONDecoder().decode(CekResi.self, from: data!)
+                }
+                catch{
+                    print("json failed \(error.localizedDescription)")
+                }
+    
+                guard let json = self.jsonData else {
+                    return
+                }
+    
+                print(json.status)
+                print(json.message)
+                
+                DispatchQueue.main.async { [self] in
+                    self.txtResi.text = self.jsonData?.data?.summary.awb
+                    self.txtTujuan.text = self.jsonData?.data?.detail.destination.capitalized
+                    self.txtStatus.text = self.jsonData?.data?.summary.status.capitalized
+                    
+                    if(txtStatus.text == "Delivered"){
+                        backgroundButtonInfo.backgroundColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
+                    }else{
+                        backgroundButtonInfo.backgroundColor = #colorLiteral(red: 1, green: 0.5411764706, blue: 0, alpha: 1)
+                    }
+                    
+                    self.txtDate.text = dateFormatter(date: self.jsonData?.data?.summary.date)
+                    
+                    self.tvDetail.reloadData()
+                }
+    
+                
+            })
+            task.resume()
+        
+        }
+    
+    func dateFormatter(date:String?) -> String{
+        let inputFormat = DateFormatter()
+        inputFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let inputDate = inputFormat.date(from: date ?? "")
+        
+        inputFormat.dateFormat = "dd MMM yyyy H:mm a"
+        
+        
+        
+        return inputFormat.string(from: inputDate ?? Date())
+        
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrDummyDetail.count
+        return jsonData?.data?.history.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as! DetailTableViewCell
-        let dummy = arrDummyDetail[indexPath.row]
-        cell.txtDesc.text = dummy.desc
-        cell.txtTitle.text = dummy.title
-        cell.imgInfo.image = dummy.imgInfo
+        let histories = jsonData?.data!.history[indexPath.row]
+        cell.txtDesc.text = dateFormatter(date: histories?.date)
+        cell.txtTitle.text = histories?.desc.capitalized
+        if(indexPath.row == 0){
+            cell.imgInfo.image = circleFill
+        }else{
+            cell.imgInfo.image = circle
+        }
+        
         return cell
     }
+    
+    
+        
     
 
     /*

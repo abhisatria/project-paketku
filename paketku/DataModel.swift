@@ -10,9 +10,9 @@ import Foundation
 
 
 struct CekResi:Decodable{
-    var status: Int
-    var message: String
-    var data: CekData
+    var status: Int?
+    var message: String?
+    var data: CekData?
 }
 
 struct CekData:Decodable {
