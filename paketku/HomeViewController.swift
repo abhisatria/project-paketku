@@ -26,7 +26,17 @@ class HomeViewController: UIViewController {
     var jsonData: CekResi?
     var selectedCourier: String?
 
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var txtResi: UITextField!
+    @IBOutlet weak var btnTrack: UIButton!
     @IBOutlet var btnCourier: [UIButton]!
+
+    @IBOutlet weak var mainBackgroundView: UIView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.BackgroundUI()
+        
+
     
     @IBOutlet weak var tfAWB: UITextField!
     
@@ -34,6 +44,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
+
         // Do any additional setup after loading the view.
     }
     
@@ -47,7 +58,32 @@ class HomeViewController: UIViewController {
         }
     }
     
+
+    func BackgroundUI() {
+        self.mainBackgroundView.layer.cornerRadius = 30
+        self.mainBackgroundView.clipsToBounds = true
+        
+        btnTrack.layer.cornerRadius = 10
+        
+        txtResi.layer.cornerRadius = 10
+        
+        profileImage.layer.cornerRadius = profileImage.frame.size.width/2
+        profileImage.clipsToBounds = true
+        
+    }
     
+    enum couriers : String {
+        case JnT = "JnT"
+        case JNE = "JNE"
+        case Tiki = "Tiki"
+        case SiCepat = "SiCepat"
+        case NinjaExpress = "Ninja Express"
+        case Wahana = "Wahana"
+        case PosIndonesia = "POS Indonesia"
+        
+        
+    }
+
     @IBAction func tappedCourier(_ sender: UIButton) {
         guard  let title = sender.currentTitle, let courier = couriers(rawValue: title) else {
             return
