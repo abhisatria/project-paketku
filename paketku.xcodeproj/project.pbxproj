@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0057781F258B9C1C00369656 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057781E258B9C1C00369656 /* LoginViewController.swift */; };
+		00577822258B9C2D00369656 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00577821258B9C2D00369656 /* RegisterViewController.swift */; };
 		4BE295E8258A40BC00D0E483 /* PaketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE295E7258A40BC00D0E483 /* PaketTableViewCell.swift */; };
 		4BE295EA258A415E00D0E483 /* PaketkuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE295E9258A415E00D0E483 /* PaketkuViewController.swift */; };
 		4BE295EE258A656E00D0E483 /* DetailPaketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE295ED258A656E00D0E483 /* DetailPaketViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0057781E258B9C1C00369656 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		00577821258B9C2D00369656 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4BE295E7258A40BC00D0E483 /* PaketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaketTableViewCell.swift; sourceTree = "<group>"; };
 		4BE295E9258A415E00D0E483 /* PaketkuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaketkuViewController.swift; sourceTree = "<group>"; };
 		4BE295ED258A656E00D0E483 /* DetailPaketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPaketViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				4BE295E9258A415E00D0E483 /* PaketkuViewController.swift */,
 				4BE295ED258A656E00D0E483 /* DetailPaketViewController.swift */,
 				4BE295EF258A65DC00D0E483 /* DetailTableViewCell.swift */,
+				0057781E258B9C1C00369656 /* LoginViewController.swift */,
+				00577821258B9C2D00369656 /* RegisterViewController.swift */,
 			);
 			path = paketku;
 			sourceTree = "<group>";
@@ -178,12 +184,14 @@
 				FF62E8352588F4F900C2EFF1 /* ViewController.swift in Sources */,
 				FF5DC5C9258B810800E5454C /* User+CoreDataProperties.swift in Sources */,
 				FF62E83B2588F4F900C2EFF1 /* paketku.xcdatamodeld in Sources */,
+				0057781F258B9C1C00369656 /* LoginViewController.swift in Sources */,
 				FF62E8312588F4F900C2EFF1 /* AppDelegate.swift in Sources */,
 				E9F52CC825892A38001C5099 /* APIRequest.swift in Sources */,
 				4BE295F0258A65DC00D0E483 /* DetailTableViewCell.swift in Sources */,
 				FF5DC5CB258B810800E5454C /* Shipment+CoreDataProperties.swift in Sources */,
 				965F498A258A2E730090D3D1 /* HomeViewController.swift in Sources */,
 				4BE295EE258A656E00D0E483 /* DetailPaketViewController.swift in Sources */,
+				00577822258B9C2D00369656 /* RegisterViewController.swift in Sources */,
 				4BE295EA258A415E00D0E483 /* PaketkuViewController.swift in Sources */,
 				FF62E8352588F4F900C2EFF1 /* ViewController.swift in Sources */,
 				FF62E83B2588F4F900C2EFF1 /* paketku.xcdatamodeld in Sources */,
