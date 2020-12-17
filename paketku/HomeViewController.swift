@@ -10,14 +10,6 @@ import UIKit
 import CoreData
 
 class HomeViewController: UIViewController {
-    @IBOutlet weak var profile: UIImageView!
-    
-    @IBOutlet weak var txtResi: UITextField!
-    
-    @IBOutlet weak var btnTrack: UIButton!
-    
-    @IBOutlet weak var mainBackgroundView: UIView!
-    
     
     enum couriers : String {
         case JnT = "JnT"
@@ -40,7 +32,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.HomeUI()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         // Do any additional setup after loading the view.
@@ -54,16 +45,6 @@ class HomeViewController: UIViewController {
                 self.view.layoutIfNeeded()
             })
         }
-    }
-    
-    func HomeUI(){
-        self.mainBackgroundView.layer.cornerRadius = 30
-        mainBackgroundView.clipsToBounds = true
-        
-        btnTrack.layer.cornerRadius = 10
-        txtResi.layer.cornerRadius = 10
-        profile.layer.cornerRadius = profile.frame.size.width/2
-        profile.clipsToBounds = true
     }
     
     
