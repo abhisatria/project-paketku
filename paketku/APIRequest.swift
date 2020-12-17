@@ -25,55 +25,37 @@ struct ApiRequest{
     }
 }
     
-//    func getData (from url:String){
-//        URLSession.shared.dataTask(with: resourceURL) { (data, response, error) in
-//            guard let data = data, error == nil else{
-//                print("something went wrong")
-//                return
-//            }
-//            var result = Response?
-//            do{
-//                result = JSONDecoder().decode(Response.self, from: data)
-//            }catch{
-//                print("failed to convert\(LocalizedDescription)"))
-//            }
+
+    
+//func loadData(awb: String, courier: String) {
+//        
+//        var request = URLRequest(url: ApiRequest.init(awb: "170430045644420", courier: "jne").resourceURL)
+//        
+//        request.httpMethod = "GET"
+//        
+//        let task =  URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
 //            
+//            var result: CekResi?
+//
+//            do{
+//                result = try JSONDecoder().decode(CekResi.self, from: data!)
+//            }
+//            catch{
+//                print("json failed \(error.localizedDescription)")
+//            }
+//
 //            guard let json = result else {
 //                return
 //            }
-//            
+//
 //            print(json.status)
+//            print(json.message)
+//
 //            
-//        }
+//        })
+//        task.resume()
+//    
+//        
 //    }
-    
-    func loadData() {
-        
-        var request = URLRequest(url: ApiRequest.init(awb: "170430045644420", courier: "jne").resourceURL)
-        
-        request.httpMethod = "GET"
-        
-        URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-            
-            var result: CekResi?
-            
-            do{
-                result = try JSONDecoder().decode(CekResi.self, from: data!)
-            }
-            catch{
-                print("json failed \(error.localizedDescription)")
-            }
-            
-            guard let json = result else {
-                return
-            }
-            
-            print(json.status)
-            print(json.message)
-            
-            
-        }).resume()
-        
-    }
     
 
