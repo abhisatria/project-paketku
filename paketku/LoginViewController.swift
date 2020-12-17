@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var viewBackground: UIView!
     
     var context:NSManagedObjectContext!
     
@@ -20,9 +21,24 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         // Do any additional setup after loading the view.
+    }
+    
+    func setUI(){
+        txtUsername.layer.cornerRadius = 10
+        txtUsername.layer.masksToBounds = true
+        txtUsername.layer.borderColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
+        txtUsername.layer.borderWidth = 1.0
+        
+        txtPassword.layer.cornerRadius = 10
+        txtPassword.layer.masksToBounds = true
+        txtPassword.layer.borderColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
+        txtPassword.layer.borderWidth = 1.0
+        
+        viewBackground.layer.cornerRadius = 30
     }
     
     @IBAction func btnRegister(_ sender: Any) {
