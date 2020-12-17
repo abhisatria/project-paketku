@@ -39,9 +39,10 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         tvDetail.dataSource = self
         tvDetail.separatorStyle = .none
-        loadData("", "")
-              
+        
         setViewUI()
+        
+        setCardData()
     }
     
     func setViewUI(){
@@ -62,51 +63,23 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
         //txtButtonInfo.text = "Delivered"
     }
     
-    func loadData(_ awb: String, _ courier: String) {
-            
-            var request = URLRequest(url: ApiRequest.init(awb: "170430045644420", courier: "jne").resourceURL)
-            
-            request.httpMethod = "GET"
-            
-            let task =  URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-                
-                var result: CekResi?
     
-                do{
-                    self.jsonData = try JSONDecoder().decode(CekResi.self, from: data!)
-                }
-                catch{
-                    print("json failed \(error.localizedDescription)")
-                }
     
-                guard let json = self.jsonData else {
-                    return
-                }
-    
-                print(json.status)
-                print(json.message)
-                
-                DispatchQueue.main.async { [self] in
-                    self.txtResi.text = self.jsonData?.data?.summary.awb
-                    self.txtTujuan.text = self.jsonData?.data?.detail.destination.capitalized
-                    self.txtStatus.text = self.jsonData?.data?.summary.status.capitalized
-                    
-                    if(txtStatus.text == "Delivered"){
-                        backgroundButtonInfo.backgroundColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
-                    }else{
-                        backgroundButtonInfo.backgroundColor = #colorLiteral(red: 1, green: 0.5411764706, blue: 0, alpha: 1)
-                    }
-                    
-                    self.txtDate.text = dateFormatter(date: self.jsonData?.data?.summary.date)
-                    
-                    self.tvDetail.reloadData()
-                }
-    
-                
-            })
-            task.resume()
+    func setCardData(){
+        self.txtResi.text = self.jsonData?.data?.summary.awb
+        self.txtTujuan.text = self.jsonData?.data?.detail.destination.capitalized
+        self.txtStatus.text = self.jsonData?.data?.summary.status.capitalized
         
+        if(txtStatus.text == "Delivered"){
+            backgroundButtonInfo.backgroundColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
+        }else{
+            backgroundButtonInfo.backgroundColor = #colorLiteral(red: 1, green: 0.5411764706, blue: 0, alpha: 1)
         }
+        
+        self.txtDate.text = dateFormatter(date: self.jsonData?.data?.summary.date)
+        
+        self.tvDetail.reloadData()
+    }
     
     func dateFormatter(date:String?) -> String{
         let inputFormat = DateFormatter()

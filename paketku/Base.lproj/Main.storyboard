@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17700" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mcy-YG-LBG">
+
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -495,6 +497,9 @@
                                 <state key="normal" title="Track">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnTrack:" destination="ogf-3F-FWq" eventType="touchUpInside" id="ZIg-gO-VmD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b2U-K0-Nno"/>
@@ -518,6 +523,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="H0l-TH-Jar"/>
                     <connections>
+                        <outlet property="tfAWB" destination="wqN-ri-cbI" id="Q0b-sv-2em"/>
                         <outletCollection property="btnCourier" destination="ELu-2E-tfI" collectionClass="NSMutableArray" id="q6M-gO-yH9"/>
                         <outletCollection property="btnCourier" destination="2R2-9l-DKj" collectionClass="NSMutableArray" id="hBv-ab-5HI"/>
                         <outletCollection property="btnCourier" destination="c0m-gY-USd" collectionClass="NSMutableArray" id="Ybv-Kx-KV6"/>
@@ -525,7 +531,7 @@
                         <outletCollection property="btnCourier" destination="t6y-ur-Ngu" collectionClass="NSMutableArray" id="rOW-dT-JGX"/>
                         <outletCollection property="btnCourier" destination="4y1-Zn-mN8" collectionClass="NSMutableArray" id="XU3-GD-ajQ"/>
                         <outletCollection property="btnCourier" destination="0yk-Lh-tzD" collectionClass="NSMutableArray" id="hoo-xK-g6S"/>
-                        <segue destination="y01-Qc-uqS" kind="show" id="U6K-SM-mDm"/>
+                        <segue destination="y01-Qc-uqS" kind="show" identifier="trackSegue" id="U6K-SM-mDm"/>
                         <segue destination="rlv-X2-LTh" kind="show" id="AtF-3Q-ug8"/>
                     </connections>
                 </viewController>
