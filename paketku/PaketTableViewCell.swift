@@ -26,7 +26,12 @@ class PaketTableViewCell: UITableViewCell {
         viewCard.layer.shadowOpacity = 0.7
         viewCard.layer.shadowRadius = 4.0
         viewInfo.layer.cornerRadius = 10
+//        txtPengirim.numberOfLines = 0
+//        txtPengirim.sizeToFit();
+//        txtPenerima.numberOfLines = 0
+//        txtPenerima.sizeToFit();
     }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
