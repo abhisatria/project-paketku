@@ -10,11 +10,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var txtResi: UITextField!
+    @IBOutlet weak var btnTrack: UIButton!
     @IBOutlet var btnCourier: [UIButton]!
-    
+    @IBOutlet weak var mainBackgroundView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.BackgroundUI()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -26,6 +30,19 @@ class HomeViewController: UIViewController {
                 self.view.layoutIfNeeded()
             })
         }
+    }
+    
+    func BackgroundUI() {
+        self.mainBackgroundView.layer.cornerRadius = 30
+        self.mainBackgroundView.clipsToBounds = true
+        
+        btnTrack.layer.cornerRadius = 10
+        
+        txtResi.layer.cornerRadius = 10
+        
+        profileImage.layer.cornerRadius = profileImage.frame.size.width/2
+        profileImage.clipsToBounds = true
+        
     }
     
     enum couriers : String {
