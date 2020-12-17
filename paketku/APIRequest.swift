@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
 
 
@@ -48,7 +50,7 @@ struct ApiRequest{
 //    }
     
     func loadData() {
-        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         var request = URLRequest(url: ApiRequest.init(awb: "170430045644420", courier: "jne").resourceURL)
         
         request.httpMethod = "GET"
@@ -71,7 +73,14 @@ struct ApiRequest{
             print(json.status)
             print(json.message)
             
-            
+            var resi = Shipment(context: context)
+            resi.awb = json.data.summary.awb
+            resi.courier = json.data.summary.courier
+            do{
+                    try context.save()
+                }catch let error{
+                    print(error.localizedDescription)
+                }
         }).resume()
         
     }
