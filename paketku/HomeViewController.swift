@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController {
     
@@ -20,6 +21,8 @@ class HomeViewController: UIViewController {
         case PosIndonesia = "POS Indonesia"
     }
     
+    var context:NSManagedObjectContext!
+    
     var jsonData: CekResi?
     var selectedCourier: String?
 
@@ -29,7 +32,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
         // Do any additional setup after loading the view.
     }
     
@@ -126,7 +130,7 @@ class HomeViewController: UIViewController {
                     if json.status == 400{
                         self.showAlert(title: "Terjadi Kesalahan", message: "\(self.jsonData?.message) Periksa kembali nomor resi dan kurir anda")
                     }
-                    
+                    self.saveShipment(awb: awb, courier: courier)
                     self.performSegue(withIdentifier: "trackSegue", sender: self)
                     
                 }
@@ -136,6 +140,19 @@ class HomeViewController: UIViewController {
             task.resume()
         
         }
+    
+    func saveShipment(awb: String, courier:String) {
+        let addShipment = NSEntityDescription.insertNewObject(forEntityName: "Shipment", into: context) as! Shipment
+        addShipment.awb = awb
+        addShipment.courier = courier
+        
+        do {
+            try context.save()
+            print("Save shipment success")
+        } catch {
+            print("Save shipment failed")
+        }
+    }
     
     func showAlert(title: String,message: String){
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
