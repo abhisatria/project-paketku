@@ -6,9 +6,9 @@
 //  Copyright © 2020 Abhi Wisesa. All rights reserved.
 //
 struct Dummy{
-    var product: String?
+    var pengirim: String?
     var resi: String?
-    var status: String?
+    var penerima: String?
     var thumbnail: String?
 }
 import UIKit
@@ -17,9 +17,11 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
     var arrDummy = [Dummy]()
         
     @IBOutlet weak var tvPaketku: UITableView!
+    //@IBOutlet weak var viewCard: UIView!
     func testDummy(){
-            arrDummy.append(Dummy(product: "1", resi: "TJR123456789", status: "On Transit", thumbnail: "jne"))
-            arrDummy.append(Dummy(product: "2", resi: "TJR123456789", status: "Delivered", thumbnail: "jnt"))
+            arrDummy.append(Dummy(pengirim: "Garry Stevens", resi: "TJR48587923129", penerima: "Kick Avenue HQ", thumbnail: "jnt"))
+            arrDummy.append(Dummy(pengirim: "Yesus Kristus", resi: "TJR48587923129", penerima: "Sidartha Gautama", thumbnail: "jne"))
+            arrDummy.append(Dummy(pengirim: "Uzumaki Naruto", resi: "TJR48587923129", penerima: "Weabweab Wibu", thumbnail: "jne"))
         }
         
         override func viewDidLoad() {
@@ -27,6 +29,8 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
             
             testDummy()
             tvPaketku.dataSource = self
+            tvPaketku.separatorStyle = .none
+            //viewCard.layer.cornerRadius = 10
 
             // Do any additional setup after loading the view.
         }
@@ -36,11 +40,11 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cells") as! PaketTableViewCell
-            //let dummy = arrDummy[indexPath.row]
+            let dummy = arrDummy[indexPath.row]
             cell.imgLogo.image = UIImage(named: arrDummy[indexPath.row].thumbnail as! String)
-            cell.txtProduct.text = arrDummy[indexPath.row].product
             cell.txtResi.text = arrDummy[indexPath.row].resi
-            cell.txtStatus.text = arrDummy[indexPath.row].status
+            cell.txtPengirim.text = arrDummy[indexPath.row].pengirim
+            cell.txtPenerima.text = dummy.penerima
             return cell
         }
     
