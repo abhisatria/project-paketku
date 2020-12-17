@@ -20,6 +20,7 @@
 		FF5DC5C9258B810800E5454C /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DC5C5258B810800E5454C /* User+CoreDataProperties.swift */; };
 		FF5DC5CA258B810800E5454C /* Shipment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DC5C6258B810800E5454C /* Shipment+CoreDataClass.swift */; };
 		FF5DC5CB258B810800E5454C /* Shipment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DC5C7258B810800E5454C /* Shipment+CoreDataProperties.swift */; };
+		FF5DE013258BB0CC00843BC1 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DE012258BB0CC00843BC1 /* UserDefaultsHelper.swift */; };
 		FF62E8312588F4F900C2EFF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62E8302588F4F900C2EFF1 /* AppDelegate.swift */; };
 		FF62E8332588F4F900C2EFF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62E8322588F4F900C2EFF1 /* SceneDelegate.swift */; };
 		FF62E8352588F4F900C2EFF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62E8342588F4F900C2EFF1 /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 		FF5DC5C5258B810800E5454C /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FF5DC5C6258B810800E5454C /* Shipment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shipment+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FF5DC5C7258B810800E5454C /* Shipment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shipment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FF5DE012258BB0CC00843BC1 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		FF62E82D2588F4F900C2EFF1 /* paketku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = paketku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62E8302588F4F900C2EFF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF62E8322588F4F900C2EFF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				4BE295EF258A65DC00D0E483 /* DetailTableViewCell.swift */,
 				0057781E258B9C1C00369656 /* LoginViewController.swift */,
 				00577821258B9C2D00369656 /* RegisterViewController.swift */,
+				FF5DE012258BB0CC00843BC1 /* UserDefaultsHelper.swift */,
 			);
 			path = paketku;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5DE013258BB0CC00843BC1 /* UserDefaultsHelper.swift in Sources */,
 				E9F52CC525891FA4001C5099 /* DataModel.swift in Sources */,
 				FF62E8352588F4F900C2EFF1 /* ViewController.swift in Sources */,
 				FF5DC5C9258B810800E5454C /* User+CoreDataProperties.swift in Sources */,

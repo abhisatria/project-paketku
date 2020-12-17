@@ -35,10 +35,11 @@ class LoginViewController: UIViewController {
         
         if (username.isEmpty || password.isEmpty) {
             showAlert(title: "Error", message: "All field must be filled")
-        } else if arr.count == 0 {
-            showAlert(title: "Error", message: "You have to register first!")
         } else {
             checkData()
+            if arr.count == 0 {
+                showAlert(title: "Error", message: "You have to register first!")
+            }
         }
     }
     
@@ -50,18 +51,25 @@ class LoginViewController: UIViewController {
             print("Fetch Failed")
         }
         
-        var usernamecheck:String?
+        var emailcheck:String?
         var passwordcheck:String?
-        let usernameinput = txtUsername.text!
+        let emailinput = txtUsername.text!
         let passwordinput = txtPassword.text!
+        var count = 0
         for data in arr{
-            usernamecheck = (data.value(forKey: "username") as! String)
+            emailcheck = (data.value(forKey: "email") as! String)
             passwordcheck = (data.value(forKey: "password") as! String)
-            if usernameinput == usernamecheck && passwordinput == passwordcheck {
+            if emailinput == emailcheck && passwordinput == passwordcheck {
+                UserDefaults.standard.set(data.value(forKey: "username") as! String, forKey: "username")
+                UserDefaults.standard.set(data.value(forKey: "email") as! String, forKey: "email")
+                UserDefaultsHelper.instance.handleUser()
+                
                 performSegue(withIdentifier: "loginSuccess", sender: self)
-            } else {
+                print(UserDefaultsHelper.instance.currentUser)
+            } else if arr.count-1 == count{
                 showAlert(title: "Error", message: "Username or password is invalid")
             }
+            count += 1
         }
     }
     
