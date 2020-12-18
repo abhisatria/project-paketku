@@ -14,45 +14,43 @@ struct Dummy{
 import UIKit
 
 class PaketkuViewController: UIViewController, UITableViewDataSource {
-    var arrDummy = [Dummy]()
     var arrResi = [CekResi]()
     var shipments = [Shipment]()
         
     @IBOutlet weak var tvPaketku: UITableView!
     //@IBOutlet weak var viewCard: UIView!
-    func testDummy(){
-            arrDummy.append(Dummy(pengirim: "Garry Stevens", resi: "TJR48587923129", penerima: "Kick Avenue HQ", thumbnail: "jnt"))
-            arrDummy.append(Dummy(pengirim: "Yesus Kristus", resi: "TJR48587923129", penerima: "Sidartha Gautama", thumbnail: "jne"))
-            arrDummy.append(Dummy(pengirim: "Uzumaki Naruto", resi: "TJR48587923129", penerima: "Weabweab Wibu", thumbnail: "jne"))
-        }
     func loadCoreData(){
+        
         UserDefaultsHelper.instance.handleUser()
-        print(UserDefaultsHelper.instance.currentUser)
         shipments = UserDefaultsHelper.instance.getUserShipment()
+        self.arrResi.removeAll()
         for shipment in shipments{
             loadData(awb: shipment.awb!, courier: shipment.courier!)
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        loadCoreData()
+        tvPaketku.dataSource = self
     }
         
         override func viewDidLoad() {
             super.viewDidLoad()
             
             
-            testDummy()
-            loadCoreData()
-            tvPaketku.dataSource = self
             tvPaketku.separatorStyle = .none
             //viewCard.layer.cornerRadius = 10
 
             // Do any additional setup after loading the view.
         }
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//            if arrResi.count == shipments.count{
+//                self.tvPaketku.reloadData()
+//            }
             return arrResi.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cells") as! PaketTableViewCell
-            let dummy = arrDummy[indexPath.row]
             var namakurir : String?
             switch arrResi[indexPath.row].data?.summary.courier {
             case "J&T Express":
@@ -73,7 +71,10 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
                 namakurir = nil
 
             }
-            cell.imgLogo.image = UIImage(named: namakurir as! String)
+            if let a = namakurir{
+                cell.imgLogo.image = UIImage(named: a)
+            }
+            
             cell.txtResi.text = arrResi[indexPath.row].data?.summary.awb
             cell.txtPengirim.text = arrResi[indexPath.row].data?.detail.shipper
             cell.txtPenerima.text = arrResi[indexPath.row].data?.detail.receiver
@@ -92,7 +93,7 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
     */
     func loadData(awb: String, courier: String) {
     
-            var request = URLRequest(url: ApiRequest.init(awb: "170430045644420", courier: "jne").resourceURL)
+            var request = URLRequest(url: ApiRequest.init(awb: awb, courier: courier).resourceURL)
     
             request.httpMethod = "GET"
     
@@ -115,6 +116,7 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
                 DispatchQueue.main.async {
                     
                     self.arrResi.append(json)
+
                     self.tvPaketku.reloadData()
                     
                 }

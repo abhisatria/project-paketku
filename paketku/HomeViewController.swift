@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
     
     var jsonData: CekResi?
     var selectedCourier: String?
+    var showCourier : String?
 
     @IBOutlet var btnCourier: [UIButton]!
     
@@ -80,29 +81,29 @@ class HomeViewController: UIViewController {
         
         switch courier {
         case .JnT:
-            print("JnT")
-            selectedCourier = "JnT"
+            showCourier = "JnT"
+            selectedCourier = "jnt"
         case .JNE:
-            print("JNE")
-            selectedCourier = "JNE"
+            showCourier = "JNE"
+            selectedCourier = "jne"
         case .Tiki:
-            print("Tiki")
-            selectedCourier = "Tiki"
+            showCourier = "Tiki"
+            selectedCourier = "tiki"
         case .SiCepat:
-            print("Si Cepat")
-            selectedCourier = "Si Cepat"
+            showCourier = "Si Cepat"
+            selectedCourier = "sicepat"
         case .NinjaExpress:
-            print("Ninja Express")
-            selectedCourier = "Ninja Express"
+            showCourier = "Ninja Express"
+            selectedCourier = "ninja"
         case .Wahana:
-            print("Wahana")
-            selectedCourier = "Wahana"
+            showCourier = "Wahana"
+            selectedCourier = "wahana"
         case .PosIndonesia:
-            print("POS Indonesia")
-            selectedCourier = "Pos"
+            showCourier = "POS Indonesia"
+            selectedCourier = "pos"
         }
         toggleButtons()
-        btnPilihKurirmu.setTitle(selectedCourier!, for: .normal)
+        btnPilihKurirmu.setTitle(showCourier!, for: .normal)
     }
     
     
@@ -157,10 +158,11 @@ class HomeViewController: UIViewController {
                     if json.status == 400{
                         self.showAlert(title: "Terjadi Kesalahan", message: "\(self.jsonData?.message) Periksa kembali nomor resi dan kurir anda")
                     }
-                    UserDefaultsHelper.instance.addUserShipment(awb: awb, courier: courier)
-                    //                    self.saveShipment(awb: awb, courier: courier)
-                    self.performSegue(withIdentifier: "trackSegue", sender: self)
-                    
+                    else{
+                        UserDefaultsHelper.instance.addUserShipment(awb: awb, courier: courier)
+                        //                    self.saveShipment(awb: awb, courier: courier)
+                        self.performSegue(withIdentifier: "trackSegue", sender: self)
+                    }
                 }
     
                 
