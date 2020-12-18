@@ -15,11 +15,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtConfirm: UITextField!
+    @IBOutlet weak var btnSignUp: UIButton!
     
     var context:NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerUi()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         // Do any additional setup after loading the view.
@@ -45,6 +47,14 @@ class RegisterViewController: UIViewController {
             saveToCD()
             performSegue(withIdentifier: "goToLogin", sender: self)
         }
+    }
+    
+    func registerUi(){
+        txtUsername.layer.cornerRadius = 10
+        txtEmail.layer.cornerRadius = 10
+        txtPassword.layer.cornerRadius = 10
+        txtConfirm.layer.cornerRadius = 10
+        btnSignUp.layer.cornerRadius = 10
     }
     
     func saveToCD(){
