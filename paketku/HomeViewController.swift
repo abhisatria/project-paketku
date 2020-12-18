@@ -11,6 +11,12 @@ import CoreData
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var mainBackgroundView: UIView!
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var btnPilihKurir: UIStackView!
+    @IBOutlet weak var txtNoResi: UITextField!
+    @IBOutlet weak var btnTrack: UIButton!
+    
     enum couriers : String {
         case JnT = "JnT"
         case JNE = "JNE"
@@ -32,9 +38,33 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        homeUI()
+        let barcodeImage = UIImage(named: "barcode2")
+        addLeftImage(textfiled: txtNoResi, image: barcodeImage!)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         // Do any additional setup after loading the view.
+    }
+    
+    func homeUI(){
+        mainBackgroundView.layer.cornerRadius = 30
+        mainBackgroundView.clipsToBounds = true
+        
+        profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
+        profilePicture.clipsToBounds = true
+        
+        btnTrack.layer.cornerRadius = 20
+        txtNoResi.layer.cornerRadius = 10
+        btnPilihKurir.layer.cornerRadius = 10
+    }
+    
+    func addLeftImage(textfiled: UITextField, image: UIImage) {
+        let leftImageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: image.size.width, height: image.size.height))
+        
+        leftImageView.image = image
+        textfiled.leftView = leftImageView
+        textfiled.leftViewMode = .always
+        
     }
     
     @IBAction func btnSelectCourier(_ sender: UIButton) {
