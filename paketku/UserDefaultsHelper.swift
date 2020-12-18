@@ -59,6 +59,7 @@ class UserDefaultsHelper{
         var shipment = Shipment(context: context)
         shipment.awb = awb
         shipment.courier = courier
+        shipment.index = Int32(user.itemArray.count)
         user.addToItems(shipment)
         
         do{
@@ -80,8 +81,7 @@ class UserDefaultsHelper{
         }catch let error{
             print(error.localizedDescription)
         }
-        return result[0].items?.allObjects as! [Shipment]
-        
-        
+        print(result[0].itemArray)
+        return result[0].itemArray
     }
 }
