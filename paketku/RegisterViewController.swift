@@ -39,7 +39,9 @@ class RegisterViewController: UIViewController {
             showAlert(title: "Error", message: "Username length between 4 and 12")
         } else if (!email.contains("@") || !email.hasSuffix(".com")) {
             showAlert(title: "Error", message: "Email must contains @ and ends with .com")
-        } else if (password.count < 4 || password.count > 12) {
+        } else if !UserDefaultsHelper.instance.checkEmail(email: email){
+            showAlert(title: "Error", message: "Email address already used")
+        }else if (password.count < 4 || password.count > 12) {
             showAlert(title: "Error", message: "Password length between 4 and 12")
         } else if (confirm != password) {
             showAlert(title: "Error", message: "Confirm password does not match with your password")
