@@ -26,8 +26,9 @@ class ProfileViewController: UIViewController {
     }
     
     func setValue(){
-        lblName.text = "Garry Ganteng"
-        lblEmail.text = "garry.ganteng@ganteng.com"
+        print(UserDefaultsHelper.instance.currentUser)
+        lblName.text = UserDefaultsHelper.instance.currentUser?.username!
+        lblEmail.text = UserDefaultsHelper.instance.currentUser?.email!
         lblTotalResi.text = "69"
     }
     
