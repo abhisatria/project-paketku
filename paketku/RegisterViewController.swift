@@ -51,9 +51,21 @@ class RegisterViewController: UIViewController {
     
     func registerUi(){
         txtUsername.layer.cornerRadius = 10
+        txtUsername.layer.borderColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
+        txtUsername.layer.borderWidth = 1.0
+        
         txtEmail.layer.cornerRadius = 10
+        txtEmail.layer.borderColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
+        txtEmail.layer.borderWidth = 1.0
+        
         txtPassword.layer.cornerRadius = 10
+        txtPassword.layer.borderColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
+        txtPassword.layer.borderWidth = 1.0
+        
         txtConfirm.layer.cornerRadius = 10
+        txtConfirm.layer.borderColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
+        txtConfirm.layer.borderWidth = 1.0
+        
         btnSignUp.layer.cornerRadius = 10
     }
     
