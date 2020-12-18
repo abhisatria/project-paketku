@@ -24,6 +24,8 @@ class RegisterViewController: UIViewController {
         registerUi()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
+        UserDefaultsHelper.instance.handleUser()
+        print(UserDefaultsHelper.instance.currentUser)
         // Do any additional setup after loading the view.
     }
     

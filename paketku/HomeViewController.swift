@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var txtNoResi: UITextField!
     @IBOutlet weak var btnTrack: UIButton!
     
+    @IBOutlet weak var btnPilihKurirmu: UIButton!
     enum couriers : String {
         case JnT = "JnT"
         case JNE = "JNE"
@@ -68,13 +69,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func btnSelectCourier(_ sender: UIButton) {
-        btnCourier.forEach {(button) in
-            
-            UIView.animate(withDuration: 0.5, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
+        toggleButtons()
     }
     
     
@@ -86,26 +81,28 @@ class HomeViewController: UIViewController {
         switch courier {
         case .JnT:
             print("JnT")
-            selectedCourier = "jnt"
+            selectedCourier = "JnT"
         case .JNE:
             print("JNE")
-            selectedCourier = "jne"
+            selectedCourier = "JNE"
         case .Tiki:
             print("Tiki")
-            selectedCourier = "tiki"
+            selectedCourier = "Tiki"
         case .SiCepat:
             print("Si Cepat")
-            selectedCourier = "sicepat"
+            selectedCourier = "Si Cepat"
         case .NinjaExpress:
             print("Ninja Express")
-            selectedCourier = "ninja"
+            selectedCourier = "Ninja Express"
         case .Wahana:
             print("Wahana")
-            selectedCourier = "wahana"
+            selectedCourier = "Wahana"
         case .PosIndonesia:
             print("POS Indonesia")
-            selectedCourier = "pos"
+            selectedCourier = "Pos"
         }
+        toggleButtons()
+        btnPilihKurirmu.setTitle(selectedCourier!, for: .normal)
     }
     
     
@@ -160,7 +157,8 @@ class HomeViewController: UIViewController {
                     if json.status == 400{
                         self.showAlert(title: "Terjadi Kesalahan", message: "\(self.jsonData?.message) Periksa kembali nomor resi dan kurir anda")
                     }
-                    self.saveShipment(awb: awb, courier: courier)
+                    UserDefaultsHelper.instance.addUserShipment(awb: awb, courier: courier)
+                    //                    self.saveShipment(awb: awb, courier: courier)
                     self.performSegue(withIdentifier: "trackSegue", sender: self)
                     
                 }
@@ -193,6 +191,16 @@ class HomeViewController: UIViewController {
             alert.addAction(yaAction)
             present(alert,animated: true,completion: nil)
         }
+    
+    func toggleButtons(){
+        btnCourier.forEach {(button) in
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
     
     
     /*

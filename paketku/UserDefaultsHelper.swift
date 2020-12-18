@@ -28,7 +28,7 @@ class UserDefaultsHelper{
     
     func checkEmail(email : String) -> Bool{
         var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format: "email == \(email)")
+        fetchRequest.predicate = NSPredicate(format: "email = %@",email)
         
         var result = [User]()
         do{
@@ -47,7 +47,7 @@ class UserDefaultsHelper{
     }
     func addUserShipment(awb : String,courier : String){
         var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format: "email == \(currentUser?.email!)")
+        fetchRequest.predicate = NSPredicate(format: "email = %@",(currentUser?.email!)!)
         
         var result = [User]()
         do{
@@ -63,14 +63,16 @@ class UserDefaultsHelper{
         
         do{
             try context.save()
+            print("Save shipment success")
         }catch let error{
             print(error.localizedDescription)
+             print("Save shipment failed")
         }
     }
     
     func getUserShipment() -> [Shipment]{
         var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format: "email == \(currentUser?.email!)")
+        fetchRequest.predicate = NSPredicate(format: "email = %@",(currentUser?.email!)!)
         
         var result = [User]()
         do{
