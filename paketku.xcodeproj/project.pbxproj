@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0057781F258B9C1C00369656 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057781E258B9C1C00369656 /* LoginViewController.swift */; };
 		00577822258B9C2D00369656 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00577821258B9C2D00369656 /* RegisterViewController.swift */; };
+		4B04202B258BE95F009161CC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04202A258BE95F009161CC /* ProfileViewController.swift */; };
 		4BE295E8258A40BC00D0E483 /* PaketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE295E7258A40BC00D0E483 /* PaketTableViewCell.swift */; };
 		4BE295EA258A415E00D0E483 /* PaketkuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE295E9258A415E00D0E483 /* PaketkuViewController.swift */; };
 		4BE295EE258A656E00D0E483 /* DetailPaketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE295ED258A656E00D0E483 /* DetailPaketViewController.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		0057781E258B9C1C00369656 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		00577821258B9C2D00369656 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4B04202A258BE95F009161CC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4BE295E7258A40BC00D0E483 /* PaketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaketTableViewCell.swift; sourceTree = "<group>"; };
 		4BE295E9258A415E00D0E483 /* PaketkuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaketkuViewController.swift; sourceTree = "<group>"; };
 		4BE295ED258A656E00D0E483 /* DetailPaketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPaketViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				0057781E258B9C1C00369656 /* LoginViewController.swift */,
 				00577821258B9C2D00369656 /* RegisterViewController.swift */,
 				FF5DE012258BB0CC00843BC1 /* UserDefaultsHelper.swift */,
+				4B04202A258BE95F009161CC /* ProfileViewController.swift */,
 			);
 			path = paketku;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				FF5DC5C9258B810800E5454C /* User+CoreDataProperties.swift in Sources */,
 				FF62E83B2588F4F900C2EFF1 /* paketku.xcdatamodeld in Sources */,
 				0057781F258B9C1C00369656 /* LoginViewController.swift in Sources */,
+				4B04202B258BE95F009161CC /* ProfileViewController.swift in Sources */,
 				FF62E8312588F4F900C2EFF1 /* AppDelegate.swift in Sources */,
 				E9F52CC825892A38001C5099 /* APIRequest.swift in Sources */,
 				4BE295F0258A65DC00D0E483 /* DetailTableViewCell.swift in Sources */,
