@@ -49,6 +49,7 @@ class HomeViewController: UIViewController {
         addLeftImage(textfiled: txtNoResi, image: barcodeImage!)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
+        txtNoResi.text = nomorResi
         // Do any additional setup after loading the view.
     }
     
@@ -80,6 +81,8 @@ class HomeViewController: UIViewController {
     @IBAction func btnSelectCourier(_ sender: UIButton) {
         toggleButtons()
     }
+    
+    
     
     
     @IBAction func tappedCourier(_ sender: UIButton) {

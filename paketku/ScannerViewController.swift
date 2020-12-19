@@ -95,7 +95,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     func found(code: String) {
         print(code)
         scannedResi = code
-        performSegue(withIdentifier: "barcodescan", sender: self)
+        performSegue(withIdentifier: "barcodeScan", sender: self)
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -107,7 +107,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "barcodescan"){
+        if(segue.identifier == "barcodeScan"){
             let destination = segue.destination as! HomeViewController
             destination.nomorResi = scannedResi
         }
