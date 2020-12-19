@@ -86,17 +86,27 @@ class UserDefaultsHelper{
         return result[0].itemArray
     }
     
-    func deleteData(awb:String) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Shipment")
-        fetchRequest.predicate = NSPredicate(format: "awb = %@",awb)
+    func deleteData(awb:String,email : String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format: "email = %@",email)
         
+        var result = [User]()
         do{
-            let result = try context.fetch(fetchRequest) as! [NSManagedObject]
-            for data in result {
-                context.delete(data)
-            }
-            try context.save()
+            result = try context.fetch(fetchRequest) as! [User]
         }catch let error{
+            print(error.localizedDescription)
+        }
+            if result.count > 0{
+                for hasil in result[0].itemArray{
+                    if hasil.awb! == awb{
+                        context.delete(hasil)
+                    }
+                }
+            }
+        do{
+            try context.save()
+        }
+        catch let error{
             print(error.localizedDescription)
         }
     }

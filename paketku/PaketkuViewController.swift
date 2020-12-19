@@ -52,7 +52,8 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
     
         func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
-                UserDefaultsHelper.instance.deleteData(awb: (arrResi[indexPath.row].data?.summary.awb)!)
+                UserDefaultsHelper.instance.deleteData(awb: (arrResi[indexPath.row].data?.summary.awb)!, email: (UserDefaultsHelper.instance.currentUser?.email!)!)
+                arrResi.remove(at: indexPath.row)
                 shipments = UserDefaultsHelper.instance.getUserShipment()
                 tvPaketku.reloadData()
             }
@@ -63,7 +64,7 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
 //            if arrResi.count == shipments.count{
 //                self.tvPaketku.reloadData()
 //            }
-            return shipments.count
+            return arrResi.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
