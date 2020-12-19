@@ -45,6 +45,7 @@ class UserDefaultsHelper{
             return false
         }
     }
+    
     func addUserShipment(awb : String,courier : String){
         var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format: "email = %@",(currentUser?.email!)!)
@@ -83,5 +84,30 @@ class UserDefaultsHelper{
         }
         print(result[0].itemArray)
         return result[0].itemArray
+    }
+    
+    func deleteData(awb:String,email : String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format: "email = %@",email)
+        
+        var result = [User]()
+        do{
+            result = try context.fetch(fetchRequest) as! [User]
+        }catch let error{
+            print(error.localizedDescription)
+        }
+            if result.count > 0{
+                for hasil in result[0].itemArray{
+                    if hasil.awb! == awb{
+                        context.delete(hasil)
+                    }
+                }
+            }
+        do{
+            try context.save()
+        }
+        catch let error{
+            print(error.localizedDescription)
+        }
     }
 }
