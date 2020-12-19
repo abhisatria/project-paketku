@@ -2,7 +2,7 @@
 //  Shipment+CoreDataProperties.swift
 //  paketku
 //
-//  Created by Abhi Wisesa on 17/12/20.
+//  Created by Abhi Wisesa on 18/12/20.
 //  Copyright © 2020 Abhi Wisesa. All rights reserved.
 //
 //
@@ -19,6 +19,7 @@ extension Shipment {
 
     @NSManaged public var awb: String?
     @NSManaged public var courier: String?
+    @NSManaged public var index: Int32
     @NSManaged public var user: User?
 
 }

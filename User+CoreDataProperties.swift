@@ -21,6 +21,13 @@ extension User {
     @NSManaged public var password: String?
     @NSManaged public var username: String?
     @NSManaged public var items: NSSet?
+    
+    public var itemArray : [Shipment]{
+        let set = items as? Set<Shipment> ?? []
+        return set.sorted{
+            $0.index > $1.index
+        }
+    }
 
 }
 

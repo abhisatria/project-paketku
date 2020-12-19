@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var txtNoResi: UITextField!
     @IBOutlet weak var btnTrack: UIButton!
     
+    @IBOutlet weak var btnPilihKurirmu: UIButton!
     enum couriers : String {
         case JnT = "JnT"
         case JNE = "JNE"
@@ -32,6 +33,7 @@ class HomeViewController: UIViewController {
     
     var jsonData: CekResi?
     var selectedCourier: String?
+    var showCourier : String?
 
     @IBOutlet var btnCourier: [UIButton]!
     
@@ -74,13 +76,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func btnSelectCourier(_ sender: UIButton) {
-        btnCourier.forEach {(button) in
-            
-            UIView.animate(withDuration: 0.5, animations: {
-                button.isHidden = !button.isHidden
-                self.view.layoutIfNeeded()
-            })
-        }
+        toggleButtons()
     }
     
     
@@ -91,27 +87,29 @@ class HomeViewController: UIViewController {
         
         switch courier {
         case .JnT:
-            print("JnT")
+            showCourier = "JnT"
             selectedCourier = "jnt"
         case .JNE:
-            print("JNE")
+            showCourier = "JNE"
             selectedCourier = "jne"
         case .Tiki:
-            print("Tiki")
+            showCourier = "Tiki"
             selectedCourier = "tiki"
         case .SiCepat:
-            print("Si Cepat")
+            showCourier = "Si Cepat"
             selectedCourier = "sicepat"
         case .NinjaExpress:
-            print("Ninja Express")
+            showCourier = "Ninja Express"
             selectedCourier = "ninja"
         case .Wahana:
-            print("Wahana")
+            showCourier = "Wahana"
             selectedCourier = "wahana"
         case .PosIndonesia:
-            print("POS Indonesia")
+            showCourier = "POS Indonesia"
             selectedCourier = "pos"
         }
+        toggleButtons()
+        btnPilihKurirmu.setTitle(showCourier!, for: .normal)
     }
     
     
@@ -125,9 +123,8 @@ class HomeViewController: UIViewController {
             showAlert(title: "Perhatian", message: "Anda harus memilih kurir")
             return
         }
-        
+        UserDefaultsHelper.instance.handleUser()
         loadData(awb!, selectedCourier!)
-        
         
     }
     
@@ -166,9 +163,14 @@ class HomeViewController: UIViewController {
                     if json.status == 400{
                         self.showAlert(title: "Terjadi Kesalahan", message: "\(self.jsonData?.message) Periksa kembali nomor resi dan kurir anda")
                     }
-                    self.saveShipment(awb: awb, courier: courier)
-                    self.performSegue(withIdentifier: "trackSegue", sender: self)
-                    
+                    else{
+                        if UserDefaultsHelper.instance.currentUser != nil{
+                            UserDefaultsHelper.instance.addUserShipment(awb: awb, courier: courier)
+                        }
+                        
+                        //                    self.saveShipment(awb: awb, courier: courier)
+                        self.performSegue(withIdentifier: "trackSegue", sender: self)
+                    }
                 }
     
                 
@@ -199,6 +201,16 @@ class HomeViewController: UIViewController {
             alert.addAction(yaAction)
             present(alert,animated: true,completion: nil)
         }
+    
+    func toggleButtons(){
+        btnCourier.forEach {(button) in
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
     
     
     /*
