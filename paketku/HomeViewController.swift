@@ -52,7 +52,8 @@ class HomeViewController: UIViewController {
     }
     
     func homeUI(){
-        mainBackgroundView.layer.cornerRadius = 30
+        //mainBackgroundView.layer.cornerRadius = 30
+        mainBackgroundView.roundCorners([.bottomLeft,.bottomRight], radius: 30)
         mainBackgroundView.clipsToBounds = true
         
         profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
@@ -223,4 +224,14 @@ class HomeViewController: UIViewController {
     }
     */
 
+}
+extension UIView{
+    
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat){
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+       let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+    
 }
