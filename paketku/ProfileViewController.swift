@@ -25,6 +25,12 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func logout(_ sender: Any) {
+        UserDefaults.standard.set(nil, forKey: "username")
+        UserDefaults.standard.set(nil, forKey: "email")
+        UserDefaultsHelper.instance.handleUser()
+        performSegue(withIdentifier: "unwindToHome", sender: self)
+    }
     func setValue(){
         UserDefaultsHelper.instance.handleUser()
         print(UserDefaultsHelper.instance.currentUser)

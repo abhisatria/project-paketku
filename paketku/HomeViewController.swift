@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var txtNoResi: UITextField!
     @IBOutlet weak var btnTrack: UIButton!
     
+    @IBOutlet weak var textUsername: UIButton!
     
     @IBOutlet weak var btnPilihKurir: UIButton!
     @IBOutlet var btnKurir: [UIButton]!
@@ -44,13 +45,15 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeUI()
         let barcodeImage = UIImage(named: "barcode2")
         addLeftImage(textfiled: txtNoResi, image: barcodeImage!)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         txtNoResi.text = nomorResi
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        homeUI()
     }
     
     func homeUI(){
@@ -60,6 +63,19 @@ class HomeViewController: UIViewController {
         
         //profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
         //profilePicture.clipsToBounds = true
+        
+        profilePicture.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        profilePicture.addGestureRecognizer(tapRecognizer)
+        
+        UserDefaultsHelper.instance.handleUser()
+        if(UserDefaultsHelper.instance.currentUser?.username == nil){
+            textUsername.setTitle("Hi, Guest!", for: .normal)
+        }
+        else
+        {
+            textUsername.setTitle("Hi, \(UserDefaultsHelper.instance.currentUser?.username as! String)!", for: .normal)
+        }
         
         btnTrack.layer.cornerRadius = 20
         txtNoResi.layer.cornerRadius = 10
@@ -76,6 +92,18 @@ class HomeViewController: UIViewController {
         textfiled.leftView = leftImageView
         textfiled.leftViewMode = .always
         
+        
+        
+    }
+    @objc func imageTapped(recognizer: UITapGestureRecognizer) {
+        print("Image was tapped")
+        UserDefaultsHelper.instance.handleUser()
+        if(UserDefaultsHelper.instance.currentUser == nil){
+            
+        }
+        else{
+            performSegue(withIdentifier: "profileSegue", sender: self)
+        }
     }
     
     @IBAction func btnSelectCourier(_ sender: UIButton) {
@@ -140,6 +168,10 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindSegue(_ sender : UIStoryboardSegue){
+        
+    }
+    
     func loadData(_ awb: String, _ courier: String) {
             
             var request = URLRequest(url: ApiRequest.init(awb: awb, courier: courier).resourceURL)
@@ -168,14 +200,10 @@ class HomeViewController: UIViewController {
                     if json.status == 400{
                         self.showAlert(title: "Terjadi Kesalahan", message: "\(self.jsonData?.message) Periksa kembali nomor resi dan kurir anda")
                     }
-                    else{
-                        if UserDefaultsHelper.instance.currentUser != nil{
-                            UserDefaultsHelper.instance.addUserShipment(awb: awb, courier: courier)
-                        }
+            
                         
                         //                    self.saveShipment(awb: awb, courier: courier)
                         self.performSegue(withIdentifier: "trackSegue", sender: self)
-                    }
                 }
     
                 

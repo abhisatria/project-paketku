@@ -30,9 +30,7 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
     
     var jsonData: CekResi?
     
-    @IBAction func btnSave(_ sender: Any) {
-        
-    }
+    
     
     @IBOutlet weak var tvDetail: UITableView!
     override func viewDidLoad() {
@@ -44,6 +42,7 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
         
         setCardData()
     }
+    
     
     func setViewUI(){
         //BackgroundBox radius & dropshadow
@@ -81,6 +80,7 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
         self.tvDetail.reloadData()
     }
     
+    
     func dateFormatter(date:String?) -> String{
         let inputFormat = DateFormatter()
         inputFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -113,6 +113,12 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    @IBAction func btnSave(_ sender: Any) {
+        if UserDefaultsHelper.instance.currentUser?.username != nil{
+                   UserDefaultsHelper.instance.addUserShipment(awb: (jsonData?.data?.summary.awb)!, courier: (jsonData?.data?.summary.courier)!)
+        }
     }
     
     
