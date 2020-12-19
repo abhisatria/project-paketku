@@ -22,7 +22,7 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
     func loadCoreData(){
         
         UserDefaultsHelper.instance.handleUser()
-        if UserDefaultsHelper.instance.currentUser != nil{
+        if UserDefaultsHelper.instance.currentUser?.username != nil{
             shipments = UserDefaultsHelper.instance.getUserShipment()
             self.arrResi.removeAll()
             for shipment in shipments{
