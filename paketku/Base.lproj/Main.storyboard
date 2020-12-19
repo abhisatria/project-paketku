@@ -532,6 +532,7 @@
                                             <action selector="btnTrack:" destination="ogf-3F-FWq" eventType="touchUpInside" id="ZIg-gO-VmD"/>
                                         </connections>
                                     </button>
+
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OF4-WG-L1r">
                                         <rect key="frame" x="338" y="20.5" width="68" height="48"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -548,6 +549,7 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJG-Sl-I1H">
                                         <rect key="frame" x="269" y="28" width="75" height="32"/>
+
                                         <constraints>
                                             <constraint firstAttribute="width" id="d1x-Fz-Pjv"/>
                                         </constraints>
@@ -560,6 +562,15 @@
                                                 <exclude reference="d1x-Fz-Pjv"/>
                                             </mask>
                                         </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTH-xa-9qR">
+                                        <rect key="frame" x="358" y="18.5" width="28" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" backgroundImage="person.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <segue destination="aXN-zX-IOO" kind="show" id="rxf-XX-PGX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.41176470590000003" green="0.36078431370000003" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -765,8 +776,10 @@
                         <outlet property="btnPilihKurirmu" destination="N9P-Hy-Q6U" id="NYO-Af-2eX"/>
                         <outlet property="btnTrack" destination="MGW-98-7yC" id="ha1-cc-RFR"/>
                         <outlet property="mainBackgroundView" destination="0Id-qL-Vre" id="XMX-Rk-3Uo"/>
+
                         <outlet property="profilePicture" destination="OF4-WG-L1r" id="ds0-Ea-YIQ"/>
                         <outlet property="textUsername" destination="UJG-Sl-I1H" id="9ea-ox-wiP"/>
+
                         <outlet property="tfAWB" destination="wqN-ri-cbI" id="Q0b-sv-2em"/>
                         <outlet property="txtNoResi" destination="wqN-ri-cbI" id="pGK-ye-735"/>
                         <outletCollection property="btnCourier" destination="ELu-2E-tfI" collectionClass="NSMutableArray" id="q6M-gO-yH9"/>
@@ -918,18 +931,6 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbt-5N-wKT">
-                                        <rect key="frame" x="294" y="35" width="21" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="suit.heart" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnSave:" destination="y01-Qc-uqS" eventType="touchUpInside" id="Gt6-qC-mzA"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cO6-VF-6Fg">
                                         <rect key="frame" x="205" y="149" width="107" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -944,6 +945,18 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
                                         </subviews>
                                         <color key="backgroundColor" red="0.41568627450980389" green="0.32549019607843138" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbt-5N-wKT">
+                                        <rect key="frame" x="311" y="14" width="21" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="bookmark">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnSave:" destination="y01-Qc-uqS" eventType="touchUpInside" id="Gt6-qC-mzA"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.30588235294117649" green="0.21568627450980393" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -1103,14 +1116,38 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
             </objects>
             <point key="canvasLocation" x="805.79710144927537" y="-781.47321428571422"/>
         </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="cHb-Kd-bxe">
+            <objects>
+                <viewController id="aXN-zX-IOO" customClass="ScannerViewController" customModule="paketku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yw4-qQ-E8X" customClass="SCNView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Un4-gE-ERM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="llw-64-gru"/>
+                    <connections>
+                        <segue destination="cOX-vm-fjY" kind="unwind" identifier="unwindFromScanner" unwindAction="unwindFromScanner:" id="Ouz-Jv-T0x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R77-gH-42a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cOX-vm-fjY" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4180" y="-1562"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="cube.box" catalog="system" width="64" height="62"/>
+        <image name="bookmark" width="80" height="112"/>
+        <image name="cube.box" catalog="system" width="128" height="124"/>
+
         <image name="curve-line-vector" width="1494" height="416"/>
         <image name="house" catalog="system" width="64" height="54"/>
         <image name="login" width="1204" height="728"/>
+
         <image name="person.circle.fill" catalog="system" width="64" height="62"/>
         <image name="suit.heart" catalog="system" width="64" height="58"/>
+
         <image name="ui-post-mail" width="340" height="340"/>
         <image name="van" width="128" height="96"/>
     </resources>

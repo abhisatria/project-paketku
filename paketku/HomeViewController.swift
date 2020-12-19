@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
     var jsonData: CekResi?
     var selectedCourier: String?
     var showCourier : String?
+    var nomorResi: String?
 
     @IBOutlet var btnCourier: [UIButton]!
     
@@ -48,6 +49,7 @@ class HomeViewController: UIViewController {
         addLeftImage(textfiled: txtNoResi, image: barcodeImage!)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
+        txtNoResi.text = nomorResi
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -59,8 +61,8 @@ class HomeViewController: UIViewController {
         mainBackgroundView.roundCorners([.bottomLeft,.bottomRight], radius: 30)
         mainBackgroundView.clipsToBounds = true
         
-        profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
-        profilePicture.clipsToBounds = true
+        //profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
+        //profilePicture.clipsToBounds = true
         
         profilePicture.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
@@ -107,6 +109,8 @@ class HomeViewController: UIViewController {
     @IBAction func btnSelectCourier(_ sender: UIButton) {
         toggleButtons()
     }
+    
+    
     
     
     @IBAction func tappedCourier(_ sender: UIButton) {
@@ -240,6 +244,8 @@ class HomeViewController: UIViewController {
             })
         }
     }
+    
+    @IBAction func unwindFromScanner (_ segue: UIStoryboardSegue){}
     
     
     /*
