@@ -931,6 +931,7 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
                     <connections>
                         <outlet property="backgroundBox" destination="7ji-Mo-3XH" id="yU3-2Y-QCr"/>
                         <outlet property="backgroundButtonInfo" destination="cO6-VF-6Fg" id="Ga7-1y-RZg"/>
+                        <outlet property="btnBookmark" destination="Pbt-5N-wKT" id="kQJ-hW-pfB"/>
                         <outlet property="tvDetail" destination="eNj-kd-bCN" id="fJ4-ZS-Lgj"/>
                         <outlet property="txtButtonInfo" destination="CpR-mZ-j3u" id="n6n-Yg-aop"/>
                         <outlet property="txtDate" destination="qoh-pG-plz" id="BzE-Dc-j40"/>

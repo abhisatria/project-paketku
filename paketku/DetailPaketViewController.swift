@@ -20,6 +20,7 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var backgroundButtonInfo: UIView!
     @IBOutlet weak var txtButtonInfo: UILabel!
     
+    @IBOutlet weak var btnBookmark: UIButton!
     @IBOutlet weak var txtResi: UILabel!
     @IBOutlet weak var txtTujuan: UILabel!
     @IBOutlet weak var txtStatus: UILabel!
@@ -57,6 +58,11 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
         //if status == onProcess
         self.backgroundButtonInfo.backgroundColor = #colorLiteral(red: 1, green: 0.5411764706, blue: 0, alpha: 1)
         txtButtonInfo.text = ""
+        
+        let image = UIImage(named: "bookmark")
+        let imageFilled = UIImage(named: "bookmarked")
+        btnBookmark.setImage(image, for: .normal)
+        btnBookmark.setImage(imageFilled, for: .selected)
         // else
         //self.backgroundButtonInfo.backgroundColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
         //txtButtonInfo.text = "Delivered"
@@ -119,6 +125,8 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
         if UserDefaultsHelper.instance.currentUser?.username != nil{
                    UserDefaultsHelper.instance.addUserShipment(awb: (jsonData?.data?.summary.awb)!, courier: (jsonData?.data?.summary.courier)!)
         }
+        btnBookmark.isSelected = !btnBookmark.isSelected
+        
     }
     
     
