@@ -15,6 +15,7 @@
 		4BE295EE258A656E00D0E483 /* DetailPaketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE295ED258A656E00D0E483 /* DetailPaketViewController.swift */; };
 		4BE295F0258A65DC00D0E483 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE295EF258A65DC00D0E483 /* DetailTableViewCell.swift */; };
 		965F498A258A2E730090D3D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F4989258A2E730090D3D1 /* HomeViewController.swift */; };
+		E933484D258E022100220EF9 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E933484C258E022100220EF9 /* ScannerViewController.swift */; };
 		E9F52CC525891FA4001C5099 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F52CC425891FA4001C5099 /* DataModel.swift */; };
 		E9F52CC825892A38001C5099 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F52CC725892A38001C5099 /* APIRequest.swift */; };
 		FF5DC5C8258B810800E5454C /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5DC5C4258B810800E5454C /* User+CoreDataClass.swift */; };
@@ -40,6 +41,7 @@
 		4BE295ED258A656E00D0E483 /* DetailPaketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPaketViewController.swift; sourceTree = "<group>"; };
 		4BE295EF258A65DC00D0E483 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		965F4989258A2E730090D3D1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E933484C258E022100220EF9 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		E9F52CC425891FA4001C5099 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E9F52CC725892A38001C5099 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		FF5DC5C4258B810800E5454C /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				00577821258B9C2D00369656 /* RegisterViewController.swift */,
 				FF5DE012258BB0CC00843BC1 /* UserDefaultsHelper.swift */,
 				4B04202A258BE95F009161CC /* ProfileViewController.swift */,
+				E933484C258E022100220EF9 /* ScannerViewController.swift */,
 			);
 			path = paketku;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				00577822258B9C2D00369656 /* RegisterViewController.swift in Sources */,
 				4BE295EA258A415E00D0E483 /* PaketkuViewController.swift in Sources */,
 				FF62E8352588F4F900C2EFF1 /* ViewController.swift in Sources */,
+				E933484D258E022100220EF9 /* ScannerViewController.swift in Sources */,
 				FF62E83B2588F4F900C2EFF1 /* paketku.xcdatamodeld in Sources */,
 				FF62E8312588F4F900C2EFF1 /* AppDelegate.swift in Sources */,
 				4BE295E8258A40BC00D0E483 /* PaketTableViewCell.swift in Sources */,

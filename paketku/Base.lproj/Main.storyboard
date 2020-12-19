@@ -529,14 +529,6 @@
                                             <action selector="btnTrack:" destination="ogf-3F-FWq" eventType="touchUpInside" id="ZIg-gO-VmD"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OF4-WG-L1r">
-                                        <rect key="frame" x="354" y="18.5" width="42" height="27"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="65" id="ORB-pH-CFa"/>
-                                            <constraint firstAttribute="width" constant="87" id="f28-ie-dhE"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJG-Sl-I1H">
                                         <rect key="frame" x="204" y="18.5" width="151" height="28"/>
                                         <constraints>
@@ -549,6 +541,15 @@
                                         </state>
                                         <connections>
                                             <action selector="btnTrack:" destination="ogf-3F-FWq" eventType="touchUpInside" id="dJw-oz-UYA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTH-xa-9qR">
+                                        <rect key="frame" x="358" y="18.5" width="28" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" backgroundImage="person.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <segue destination="aXN-zX-IOO" kind="show" id="rxf-XX-PGX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -740,7 +741,6 @@
                         <outlet property="btnPilihKurirmu" destination="N9P-Hy-Q6U" id="NYO-Af-2eX"/>
                         <outlet property="btnTrack" destination="MGW-98-7yC" id="ha1-cc-RFR"/>
                         <outlet property="mainBackgroundView" destination="0Id-qL-Vre" id="XMX-Rk-3Uo"/>
-                        <outlet property="profilePicture" destination="OF4-WG-L1r" id="ds0-Ea-YIQ"/>
                         <outlet property="tfAWB" destination="wqN-ri-cbI" id="Q0b-sv-2em"/>
                         <outlet property="txtNoResi" destination="wqN-ri-cbI" id="pGK-ye-735"/>
                         <outletCollection property="btnCourier" destination="ELu-2E-tfI" collectionClass="NSMutableArray" id="q6M-gO-yH9"/>
@@ -1076,6 +1076,22 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6DS-Am-Oox" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="805.79710144927537" y="-781.47321428571422"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="cHb-Kd-bxe">
+            <objects>
+                <viewController id="aXN-zX-IOO" customClass="ScannerViewController" customModule="paketku" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yw4-qQ-E8X" customClass="SCNView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Un4-gE-ERM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="llw-64-gru"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R77-gH-42a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4180" y="-1562"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

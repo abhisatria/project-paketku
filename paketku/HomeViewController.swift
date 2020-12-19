@@ -36,6 +36,7 @@ class HomeViewController: UIViewController {
     var jsonData: CekResi?
     var selectedCourier: String?
     var showCourier : String?
+    var nomorResi: String?
 
     @IBOutlet var btnCourier: [UIButton]!
     
@@ -56,8 +57,8 @@ class HomeViewController: UIViewController {
         mainBackgroundView.roundCorners([.bottomLeft,.bottomRight], radius: 30)
         mainBackgroundView.clipsToBounds = true
         
-        profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
-        profilePicture.clipsToBounds = true
+        //profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
+        //profilePicture.clipsToBounds = true
         
         btnTrack.layer.cornerRadius = 20
         txtNoResi.layer.cornerRadius = 10
@@ -212,6 +213,8 @@ class HomeViewController: UIViewController {
             })
         }
     }
+    
+    @IBAction func unwindFromScanner (_ segue: UIStoryboardSegue){}
     
     
     /*
