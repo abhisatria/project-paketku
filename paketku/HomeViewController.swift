@@ -117,9 +117,8 @@ class HomeViewController: UIViewController {
             showAlert(title: "Perhatian", message: "Anda harus memilih kurir")
             return
         }
-        
+        UserDefaultsHelper.instance.handleUser()
         loadData(awb!, selectedCourier!)
-        
         
     }
     
@@ -159,7 +158,10 @@ class HomeViewController: UIViewController {
                         self.showAlert(title: "Terjadi Kesalahan", message: "\(self.jsonData?.message) Periksa kembali nomor resi dan kurir anda")
                     }
                     else{
-                        UserDefaultsHelper.instance.addUserShipment(awb: awb, courier: courier)
+                        if UserDefaultsHelper.instance.currentUser != nil{
+                            UserDefaultsHelper.instance.addUserShipment(awb: awb, courier: courier)
+                        }
+                        
                         //                    self.saveShipment(awb: awb, courier: courier)
                         self.performSegue(withIdentifier: "trackSegue", sender: self)
                     }

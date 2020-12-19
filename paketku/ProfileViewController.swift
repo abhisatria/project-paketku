@@ -26,6 +26,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setValue(){
+        UserDefaultsHelper.instance.handleUser()
         print(UserDefaultsHelper.instance.currentUser)
         lblName.text = UserDefaultsHelper.instance.currentUser?.username!
         lblEmail.text = UserDefaultsHelper.instance.currentUser?.email!

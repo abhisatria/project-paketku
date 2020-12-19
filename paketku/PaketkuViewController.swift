@@ -22,11 +22,14 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
     func loadCoreData(){
         
         UserDefaultsHelper.instance.handleUser()
-        shipments = UserDefaultsHelper.instance.getUserShipment()
-        self.arrResi.removeAll()
-        for shipment in shipments{
-            loadData(awb: shipment.awb!, courier: shipment.courier!)
+        if UserDefaultsHelper.instance.currentUser != nil{
+            shipments = UserDefaultsHelper.instance.getUserShipment()
+            self.arrResi.removeAll()
+            for shipment in shipments{
+                loadData(awb: shipment.awb!, courier: shipment.courier!)
+            }
         }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         loadCoreData()
