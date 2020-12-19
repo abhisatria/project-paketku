@@ -892,18 +892,6 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbt-5N-wKT">
-                                        <rect key="frame" x="294" y="35" width="21" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="suit.heart" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnSave:" destination="y01-Qc-uqS" eventType="touchUpInside" id="Gt6-qC-mzA"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cO6-VF-6Fg">
                                         <rect key="frame" x="205" y="149" width="107" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -918,6 +906,18 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
                                         </subviews>
                                         <color key="backgroundColor" red="0.41568627450980389" green="0.32549019607843138" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbt-5N-wKT">
+                                        <rect key="frame" x="311" y="14" width="21" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="bookmark">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnSave:" destination="y01-Qc-uqS" eventType="touchUpInside" id="Gt6-qC-mzA"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.30588235294117649" green="0.21568627450980393" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -1099,12 +1099,12 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
         <segue reference="vP0-j7-4y3"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="bookmark" width="80" height="112"/>
         <image name="cube.box" catalog="system" width="128" height="124"/>
         <image name="curve-line-vector" width="1494" height="416"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="login" width="1204" height="728"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="suit.heart" catalog="system" width="128" height="109"/>
         <image name="ui-post-mail" width="340" height="340"/>
         <image name="van" width="128" height="96"/>
         <systemColor name="opaqueSeparatorColor">
