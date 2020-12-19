@@ -1088,8 +1088,12 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="llw-64-gru"/>
+                    <connections>
+                        <segue destination="cOX-vm-fjY" kind="unwind" identifier="unwindFromScanner" unwindAction="unwindFromScanner:" id="Ouz-Jv-T0x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R77-gH-42a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cOX-vm-fjY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4180" y="-1562"/>
         </scene>
