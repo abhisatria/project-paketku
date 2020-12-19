@@ -98,8 +98,8 @@ class HomeViewController: UIViewController {
     @objc func imageTapped(recognizer: UITapGestureRecognizer) {
         print("Image was tapped")
         UserDefaultsHelper.instance.handleUser()
-        if(UserDefaultsHelper.instance.currentUser == nil){
-            
+        if(UserDefaultsHelper.instance.currentUser?.username == nil){
+            performSegue(withIdentifier: "loginPage", sender: self)
         }
         else{
             performSegue(withIdentifier: "profileSegue", sender: self)
