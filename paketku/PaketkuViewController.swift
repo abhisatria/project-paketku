@@ -14,27 +14,27 @@ struct Dummy{
 import UIKit
 
 class PaketkuViewController: UIViewController, UITableViewDataSource {
-    var arrResi = [CekResi]()
-    var shipments = [Shipment]()
-        
-    @IBOutlet weak var tvPaketku: UITableView!
-    //@IBOutlet weak var viewCard: UIView!
-    func loadCoreData(){
-        
-        UserDefaultsHelper.instance.handleUser()
-        if UserDefaultsHelper.instance.currentUser?.username != nil{
-            shipments = UserDefaultsHelper.instance.getUserShipment()
-            self.arrResi.removeAll()
-            for shipment in shipments{
-                loadData(awb: shipment.awb!, courier: shipment.courier!)
+        var arrResi = [CekResi]()
+        var shipments = [Shipment]()
+            
+        @IBOutlet weak var tvPaketku: UITableView!
+        //@IBOutlet weak var viewCard: UIView!
+        func loadCoreData(){
+            
+            UserDefaultsHelper.instance.handleUser()
+            if UserDefaultsHelper.instance.currentUser?.username != nil{
+                shipments = UserDefaultsHelper.instance.getUserShipment()
+                self.arrResi.removeAll()
+                for shipment in shipments{
+                    loadData(awb: shipment.awb!, courier: shipment.courier!)
+                }
             }
+            
         }
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        loadCoreData()
-        tvPaketku.dataSource = self
-    }
+        override func viewWillAppear(_ animated: Bool) {
+            loadCoreData()
+            tvPaketku.dataSource = self
+        }
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -45,11 +45,25 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
 
             // Do any additional setup after loading the view.
         }
+    
+        func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+            return true
+        }
+    
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                UserDefaultsHelper.instance.deleteData(awb: (arrResi[indexPath.row].data?.summary.awb)!)
+                shipments = UserDefaultsHelper.instance.getUserShipment()
+                tvPaketku.reloadData()
+            }
+        }
+    
+    
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //            if arrResi.count == shipments.count{
 //                self.tvPaketku.reloadData()
 //            }
-            return arrResi.count
+            return shipments.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,10 +118,10 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
     
                 var result: CekResi?
     
-                do{
+                do {
                     result = try JSONDecoder().decode(CekResi.self, from: data!)
                 }
-                catch{
+                catch {
                     print("json failed \(error.localizedDescription)")
                 }
     

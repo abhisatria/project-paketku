@@ -116,8 +116,27 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func btnSave(_ sender: Any) {
+        var namakurir : String?
+        switch jsonData?.data?.summary.courier {
+           case "J&T Express":
+               namakurir = "jnt"
+           case "JNE Express":
+               namakurir = "jne"
+           case "Tiki":
+               namakurir = "tiki"
+           case "SiCepat":
+               namakurir = "sicepat"
+           case "Ninja Express":
+               namakurir = "ninjaxpress"
+           case "Wahana Express":
+               namakurir = "ninjaxpress"
+           case "Pos Indonesia":
+               namakurir = "posindo"
+           default :
+               namakurir = nil
+           }
         if UserDefaultsHelper.instance.currentUser?.username != nil{
-                   UserDefaultsHelper.instance.addUserShipment(awb: (jsonData?.data?.summary.awb)!, courier: (jsonData?.data?.summary.courier)!)
+                   UserDefaultsHelper.instance.addUserShipment(awb: (jsonData?.data?.summary.awb)!, courier: namakurir!)
         }
     }
     
