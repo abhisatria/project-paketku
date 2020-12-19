@@ -13,8 +13,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var mainBackgroundView: UIView!
     @IBOutlet weak var profilePicture: UIImageView!
-    @IBOutlet weak var btnPilihKurir: UIButton!
-    @IBOutlet var btnKurir: [UIButton]!
+    @IBOutlet weak var btnPilihKurir: UIStackView!
     @IBOutlet weak var txtNoResi: UITextField!
     @IBOutlet weak var btnTrack: UIButton!
     
@@ -59,11 +58,6 @@ class HomeViewController: UIViewController {
         btnTrack.layer.cornerRadius = 20
         txtNoResi.layer.cornerRadius = 10
         btnPilihKurir.layer.cornerRadius = 10
-        
-        btnPilihKurir.layer.cornerRadius = 10
-        btnKurir.forEach { (btn) in
-            btn.layer.cornerRadius = 10
-        }
     }
     
     func addLeftImage(textfiled: UITextField, image: UIImage) {
