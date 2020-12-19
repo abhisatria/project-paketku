@@ -95,6 +95,10 @@ class LoginViewController: UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func unwindFromDaftar(_ sender : UIStoryboardSegue){
+        
+    }
     /*
     // MARK: - Navigation
 

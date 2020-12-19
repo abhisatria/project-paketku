@@ -246,6 +246,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func unwindFromScanner (_ segue: UIStoryboardSegue){}
+    @IBAction func unwindLogin (_segue : UIStoryboardSegue){}
     
     
     /*
