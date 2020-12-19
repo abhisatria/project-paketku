@@ -12,7 +12,7 @@ import CoreData
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var mainBackgroundView: UIView!
-    @IBOutlet weak var profilePicture: UIImageView!
+//    @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var txtNoResi: UITextField!
     @IBOutlet weak var btnTrack: UIButton!
     
@@ -55,8 +55,8 @@ class HomeViewController: UIViewController {
         mainBackgroundView.layer.cornerRadius = 30
         mainBackgroundView.clipsToBounds = true
         
-        profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
-        profilePicture.clipsToBounds = true
+//        profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
+//        profilePicture.clipsToBounds = true
         
         btnTrack.layer.cornerRadius = 20
         txtNoResi.layer.cornerRadius = 10
@@ -211,7 +211,9 @@ class HomeViewController: UIViewController {
             })
         }
     }
-    
+    @IBAction func unwindSegue(_ sender : UIStoryboardSegue){
+        
+    }
     
     /*
     // MARK: - Navigation

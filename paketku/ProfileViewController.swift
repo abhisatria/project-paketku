@@ -53,7 +53,15 @@ class ProfileViewController: UIViewController {
         cardWhiteView.layer.shadowRadius = 3.0
     }
     
-
+    @IBAction func logout(_ sender: Any) {
+        UserDefaults.standard.set(nil, forKey: "username")
+        UserDefaults.standard.set(nil, forKey: "email")
+        
+        UserDefaultsHelper.instance.handleUser()
+        print(UserDefaultsHelper.instance.currentUser)
+        performSegue(withIdentifier: "unwind", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -63,7 +71,7 @@ class ProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
 
 extension UIView{
