@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="77N-vC-Tql">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="77N-vC-Tql">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -200,15 +200,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sF-Di-Adj">
-                                <rect key="frame" x="147" y="568" width="120" height="34"/>
+                                <rect key="frame" x="147" y="568" width="120" height="33"/>
                                 <color key="backgroundColor" red="0.41568627450980389" green="0.32549019607843138" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="CNZ-x3-cXa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="Login disini">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="mcy-YG-LBG" kind="show" id="ptU-P6-RTw"/>
                                 </connections>
@@ -527,7 +532,7 @@
                                         </variation>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OF4-WG-L1r">
-                                        <rect key="frame" x="348" y="28.5" width="43" height="29.5"/>
+                                        <rect key="frame" x="348" y="28.5" width="43" height="29"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="87" id="f28-ie-dhE"/>
@@ -791,14 +796,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ure-1e-cb2">
-                                                    <rect key="frame" x="20" y="10.5" width="0.0" height="50"/>
+                                                    <rect key="frame" x="20" y="10.5" width="51" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="OOW-b1-3As"/>
                                                         <constraint firstAttribute="width" constant="51" id="sF4-t1-OJX"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7A-vw-KKE">
-                                                    <rect key="frame" x="-98.5" y="14" width="82.5" height="18"/>
+                                                    <rect key="frame" x="88" y="14" width="312" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="312" id="h65-4R-qjJ"/>
                                                         <constraint firstAttribute="height" constant="18" id="oGA-Zu-CKc"/>
@@ -808,7 +813,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12-12-2020 16:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSG-0K-iZe">
-                                                    <rect key="frame" x="-226" y="35" width="124" height="19.5"/>
+                                                    <rect key="frame" x="88" y="35" width="226" height="19.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19.5" id="RCU-if-psO"/>
                                                         <constraint firstAttribute="width" constant="226" id="Rz5-A5-wOl"/>
@@ -1105,21 +1110,21 @@ S2ViYXlvcmFuIExhbWEsAwMDAwMgSmFrYXJ0YSBTA
             <point key="canvasLocation" x="4180" y="-1550"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Group_20" width="1216" height="1010"/>
-        <image name="barcode2" width="36" height="36"/>
-        <image name="bookmark" width="80" height="112"/>
-        <image name="cube.box" catalog="system" width="64" height="62"/>
-        <image name="curve-line-vector" width="1494" height="416"/>
-        <image name="homeBackground" width="825" height="512"/>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="login" width="1204" height="728"/>
-        <image name="person.circle.fill" catalog="system" width="64" height="62"/>
-        <image name="ui-post-mail" width="340" height="340"/>
-        <image name="van" width="128" height="96"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ptU-P6-RTw"/>
         <segue reference="m0D-83-VPT"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Group_20" width="1216" height="1010"/>
+        <image name="barcode2" width="36" height="36"/>
+        <image name="bookmark" width="80" height="112"/>
+        <image name="cube.box" catalog="system" width="128" height="124"/>
+        <image name="curve-line-vector" width="1494" height="416"/>
+        <image name="homeBackground" width="825" height="512"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="login" width="1204" height="728"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="ui-post-mail" width="340" height="340"/>
+        <image name="van" width="128" height="96"/>
+    </resources>
 </document>
