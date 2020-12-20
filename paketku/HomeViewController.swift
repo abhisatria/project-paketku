@@ -158,7 +158,6 @@ class HomeViewController: UIViewController {
         }
         UserDefaultsHelper.instance.handleUser()
         loadData(awb!, selectedCourier!)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -183,9 +182,11 @@ class HomeViewController: UIViewController {
     
                 do{
                     self.jsonData = try JSONDecoder().decode(CekResi.self, from: data!)
+                   
                 }
                 catch{
                     print("json failed \(error.localizedDescription)")
+                    
                 }
     
                 guard let json = self.jsonData else {
@@ -197,13 +198,16 @@ class HomeViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     
+                    
                     if json.status == 400{
-                        self.showAlert(title: "Terjadi Kesalahan", message: "\(self.jsonData?.message) Periksa kembali nomor resi dan kurir anda")
+                        self.showAlert(title: "\(self.jsonData!.message!)", message: " Periksa kembali nomor resi dan kurir anda \n error status: \(self.jsonData!.status!)")
+                        return
                     }
             
                         
                         //                    self.saveShipment(awb: awb, courier: courier)
                         self.performSegue(withIdentifier: "trackSegue", sender: self)
+                    self.jsonData = nil
                 }
     
                 
