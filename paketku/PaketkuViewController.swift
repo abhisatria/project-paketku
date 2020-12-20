@@ -18,12 +18,15 @@ class PaketkuViewController: UIViewController, UITableViewDataSource, UITableVie
         var shipments = [Shipment]()
         var fetchResi: CekResi?
             
-        @IBOutlet weak var tvPaketku: UITableView!
+    @IBOutlet weak var gambarNoData: UIImageView!
+    @IBOutlet weak var tvPaketku: UITableView!
         //@IBOutlet weak var viewCard: UIView!
         func loadCoreData(){
             
             UserDefaultsHelper.instance.handleUser()
             if UserDefaultsHelper.instance.currentUser?.username != nil{
+                tvPaketku.isHidden = false
+                gambarNoData.isHidden = true
                 shipments = UserDefaultsHelper.instance.getUserShipment()
                 self.arrResi.removeAll()
                 tvPaketku.reloadData()
@@ -34,6 +37,8 @@ class PaketkuViewController: UIViewController, UITableViewDataSource, UITableVie
             else{
                 self.arrResi.removeAll()
                 tvPaketku.reloadData()
+                tvPaketku.isHidden = true
+                gambarNoData.isHidden = false
             }
             
         }
