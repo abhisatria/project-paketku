@@ -13,9 +13,10 @@ struct Dummy{
 }
 import UIKit
 
-class PaketkuViewController: UIViewController, UITableViewDataSource {
+class PaketkuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var arrResi = [CekResi]()
         var shipments = [Shipment]()
+        var fetchResi: CekResi?
             
         @IBOutlet weak var tvPaketku: UITableView!
         //@IBOutlet weak var viewCard: UIView!
@@ -38,6 +39,8 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
         }
         override func viewWillAppear(_ animated: Bool) {
             tvPaketku.dataSource = self
+            tvPaketku.delegate = self
+            
             loadCoreData()
             
         }
@@ -45,7 +48,7 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            
+            //tvPaketku.delegate = self
             tvPaketku.separatorStyle = .none
             //viewCard.layer.cornerRadius = 10
 
@@ -99,11 +102,38 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
                 cell.imgLogo.image = UIImage(named: a)
             }
             
-            cell.txtResi.text = arrResi[indexPath.row].data?.summary.awb
-            cell.txtPengirim.text = arrResi[indexPath.row].data?.detail.shipper
-            cell.txtPenerima.text = arrResi[indexPath.row].data?.detail.receiver
+            cell.txtResi.text = arrResi[indexPath.row].data?.summary.awb.capitalized
+            cell.txtPengirim.text = arrResi[indexPath.row].data?.detail.shipper.capitalized
+            cell.txtPenerima.text = arrResi[indexPath.row].data?.detail.receiver.capitalized
             return cell
         }
+    	
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        fetchResi = arrResi[indexPath.row]
+        print(indexPath.row)
+        performSegue(withIdentifier: "paketkuDetail", sender: self)
+    }
+    
+    
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "paketkuDetail"){
+            let destination = segue.destination as! DetailPaketViewController
+            destination.jsonData = fetchResi
+            
+        }
+    }
+    	
+    
+  
+    
+    
+    
+    
     
 
     /*

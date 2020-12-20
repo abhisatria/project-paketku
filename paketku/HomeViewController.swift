@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let barcodeImage = UIImage(named: "barcode2")
-        addLeftImage(textfiled: txtNoResi, image: barcodeImage!)
+        //addLeftImage(textfiled: txtNoResi, image: barcodeImage!)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         txtNoResi.text = nomorResi
