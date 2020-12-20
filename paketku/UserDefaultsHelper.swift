@@ -72,6 +72,29 @@ class UserDefaultsHelper{
         }
     }
     
+    func isShipmentAlreadySaved(awb : String) -> Bool {
+        var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format: "email = %@",(currentUser?.email!)!)
+        
+        var result = [User]()
+        do{
+            result = try context.fetch(fetchRequest) as! [User]
+        }catch let error{
+            print(error.localizedDescription)
+        }
+        
+        if result.count > 0{
+            for hasil in result[0].itemArray{
+                if hasil.awb! == awb{
+                    return true
+                }
+            }
+            return false
+        }
+        else {
+            return false}
+    }
+    
     func getUserShipment() -> [Shipment]{
         var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format: "email = %@",(currentUser?.email!)!)

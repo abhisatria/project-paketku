@@ -63,6 +63,16 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
         let imageFilled = UIImage(named: "bookmarked")
         btnBookmark.setImage(image, for: .normal)
         btnBookmark.setImage(imageFilled, for: .selected)
+        
+        if(UserDefaultsHelper.instance.currentUser?.username) != nil{
+            if (UserDefaultsHelper.instance.isShipmentAlreadySaved(awb: (jsonData?.data?.summary.awb)!)){
+                btnBookmark.isSelected = true
+            }
+            else {
+                btnBookmark.isSelected = false
+            }
+        }
+        
         // else
         //self.backgroundButtonInfo.backgroundColor = #colorLiteral(red: 0.4156862745, green: 0.3254901961, blue: 0.8039215686, alpha: 1)
         //txtButtonInfo.text = "Delivered"
@@ -142,10 +152,29 @@ class DetailPaketViewController: UIViewController, UITableViewDataSource {
                namakurir = nil
            }
         if UserDefaultsHelper.instance.currentUser?.username != nil{
-                   UserDefaultsHelper.instance.addUserShipment(awb: (jsonData?.data?.summary.awb)!, courier: namakurir!)
+            if (UserDefaultsHelper.instance.isShipmentAlreadySaved(awb: (jsonData?.data?.summary.awb)!)){
+                //unsave
+                btnBookmark.isSelected = false
+                UserDefaultsHelper.instance.deleteData(awb: (jsonData?.data?.summary.awb)!, email: UserDefaultsHelper.instance.currentUser!.email!)
+            }
+            else {
+                btnBookmark.isSelected = true
+                UserDefaultsHelper.instance.addUserShipment(awb: (jsonData?.data?.summary.awb)!, courier: namakurir!)
+            }
         }
-        btnBookmark.isSelected = !btnBookmark.isSelected
-        
+        else{
+            showAlert(title: "Gagal", message: "Anda harus melakukan login terlebih dahulu")
+        }
+    }
+    
+    func showAlert(title: String,message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        let yaAction = UIAlertAction(title: "Mengerti", style: .default, handler: nil)
+
+
+        alert.addAction(yaAction)
+        present(alert,animated: true,completion: nil)
     }
     
     

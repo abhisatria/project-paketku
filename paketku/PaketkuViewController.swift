@@ -25,15 +25,21 @@ class PaketkuViewController: UIViewController, UITableViewDataSource {
             if UserDefaultsHelper.instance.currentUser?.username != nil{
                 shipments = UserDefaultsHelper.instance.getUserShipment()
                 self.arrResi.removeAll()
+                tvPaketku.reloadData()
                 for shipment in shipments{
                     loadData(awb: shipment.awb!, courier: shipment.courier!)
                 }
             }
+            else{
+                self.arrResi.removeAll()
+                tvPaketku.reloadData()
+            }
             
         }
         override func viewWillAppear(_ animated: Bool) {
-            loadCoreData()
             tvPaketku.dataSource = self
+            loadCoreData()
+            
         }
         
         override func viewDidLoad() {
