@@ -71,6 +71,19 @@ class UserDefaultsHelper{
              print("Save shipment failed")
         }
     }
+    func getUserTotalResi() -> Int{
+        var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format: "email = %@",(currentUser?.email!)!)
+        
+        var result = [User]()
+        do{
+            result = try context.fetch(fetchRequest) as! [User]
+        }catch let error{
+            print(error.localizedDescription)
+        }
+        var user = result[0]
+        return user.itemArray.count
+    }
     
     func isShipmentAlreadySaved(awb : String) -> Bool {
         var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")

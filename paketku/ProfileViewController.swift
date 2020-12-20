@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController {
         print(UserDefaultsHelper.instance.currentUser)
         lblName.text = UserDefaultsHelper.instance.currentUser?.username!
         lblEmail.text = UserDefaultsHelper.instance.currentUser?.email!
-        lblTotalResi.text = "69"
+        lblTotalResi.text = "\(UserDefaultsHelper.instance.getUserTotalResi())"
     }
     
     func setUI(){
